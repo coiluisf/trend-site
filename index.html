@@ -1876,9 +1876,9 @@
 
     /* How It Works Section */
     .how-section {
-      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
-      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-      color: #ffffff;
+      padding: clamp(48px, 8vw, 80px) clamp(20px, 5vw, 40px) !important;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+      color: #ffffff !important;
     }
 
     .how-wrapper {
@@ -1895,9 +1895,13 @@
     .how-header .tagline { color: #C7A46A; }
 
     .how-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 28px !important;
+    }
+
+    @media (min-width: 640px) {
+      .how-grid { grid-template-columns: repeat(2, 1fr) !important; }
     }
 
     .step {
@@ -1933,7 +1937,12 @@
     }
 
     @media (min-width: 1024px) {
-      .how-grid { grid-template-columns: repeat(4, 1fr); }
+      .how-grid { grid-template-columns: repeat(4, 1fr) !important; }
+    }
+
+    @media (max-width: 480px) {
+      .how-section { padding: 2rem 1rem !important; }
+      .how-grid { gap: 1.5rem !important; }
     }
 
     /* CTA Section */
