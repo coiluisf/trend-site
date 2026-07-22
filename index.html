@@ -157,6 +157,229 @@
       }
     }
 
+    /* PROMPT 2 - Layouts Grid/Flex Responsivos */
+
+    /* Benefícios - Grid 4→2→1 */
+    @media (max-width: 768px) {
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1px !important;
+      }
+
+      .benefit-grid > div {
+        padding: 1.5rem !important;
+      }
+
+      .benefit-grid > div h3,
+      .benefit-grid > div p {
+        font-size: 0.9375rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .benefit-grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+      }
+    }
+
+    /* Seções Flex - 2 colunas → Stack Vertical */
+    @media (max-width: 768px) {
+      div[style*="display:flex"][style*="gap:40px"] {
+        flex-direction: column !important;
+        gap: 2rem !important;
+      }
+
+      div[style*="flex:1 1 45%"],
+      div[style*="flex:1 1 50%"],
+      div[style*="flex:1 1 55%"],
+      div[style*="flex:1 1 60%"] {
+        flex: 1 1 100% !important;
+      }
+    }
+
+    /* Serviços - Grid 3→2→1 */
+    @media (max-width: 1024px) {
+      div[style*="grid-template-columns:repeat(3"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      div[style*="grid-template-columns:repeat(2"],
+      div[style*="grid-template-columns:repeat(3"] {
+        grid-template-columns: repeat(1, 1fr) !important;
+      }
+
+      .service-card {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      div[style*="grid"] img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 250px !important;
+        object-fit: cover !important;
+      }
+    }
+
+    /* Estrutura - Cards Grid Responsivo */
+    @media (max-width: 768px) {
+      div[style*="display:grid"] {
+        gap: 1.5rem !important;
+      }
+    }
+
+    /* Diferenciais - 2→1 coluna */
+    @media (max-width: 768px) {
+      div[style*="grid-template-columns:repeat(2"] {
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 1.5rem !important;
+      }
+    }
+
+    div[style*="display:flex"][style*="align-items:center"][style*="gap:"] {
+      gap: 1rem !important;
+    }
+
+    div[style*="display:flex"][style*="align-items:center"] span {
+      font-size: 0.9375rem !important;
+    }
+
+    /* Depoimentos - Flex Responsivo */
+    @media (max-width: 768px) {
+      div[style*="display:flex"][style*="gap:28px"] {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+      }
+
+      div[style*="flex:1"] {
+        flex: 1 1 100% !important;
+      }
+    }
+
+    div[style*="font-style:italic"] {
+      font-size: 1rem !important;
+      line-height: 1.6 !important;
+    }
+
+    div[style*="display:flex"][style*="gap:8px"] {
+      gap: 0.5rem !important;
+      justify-content: center !important;
+    }
+
+    /* Antes/Depois - Carousel Mobile */
+    @media (max-width: 768px) {
+      div[style*="display:flex"] img[style*="width:100%"] {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 400px !important;
+        object-fit: cover !important;
+      }
+
+      div[style*="transform:translateX"] {
+        width: 100% !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      button[style*="width:48px"] {
+        width: 40px !important;
+        height: 40px !important;
+      }
+    }
+
+    /* Passos - Timeline Responsivo */
+    @media (max-width: 768px) {
+      div[style*="display:flex"][style*="gap:16px"] {
+        flex-wrap: wrap !important;
+        gap: 1rem !important;
+      }
+    }
+
+    div[style*="flex:1"] {
+      min-width: 0 !important;
+    }
+
+    span[style*="font-size:32px"],
+    span[style*="font-size:40px"] {
+      font-size: 1.5rem !important;
+    }
+
+    span[style*="font-size:16px"] {
+      font-size: 0.9375rem !important;
+    }
+
+    /* FAQ - Accordion Responsivo */
+    @media (max-width: 768px) {
+      div[style*="flex-direction:column"][style*="gap:12px"] {
+        gap: 1rem !important;
+      }
+    }
+
+    div[style*="border-bottom:1px solid"] {
+      padding: 1.25rem 0 !important;
+    }
+
+    div[style*="display:flex"][style*="justify-content:space-between"] {
+      gap: 1rem !important;
+    }
+
+    div[style*="font-size:16px"] {
+      font-size: 0.9375rem !important;
+    }
+
+    /* Imagens Responsivas */
+    img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      display: block !important;
+    }
+
+    @media (max-width: 768px) {
+      div[style*="position:absolute"] img {
+        object-fit: cover !important;
+      }
+
+      div[style*="flex:1 1 50%"] img {
+        max-height: 300px !important;
+      }
+    }
+
+    /* Overflow e Ajustes Gerais */
+    body {
+      overflow-x: hidden !important;
+    }
+
+    /* Flex containers em mobile */
+    @media (max-width: 768px) {
+      div[style*="display:flex"] {
+        flex-wrap: wrap !important;
+      }
+
+      div[style*="flex:1"],
+      div[style*="flex:0"] {
+        min-width: 0 !important;
+      }
+    }
+
+    /* Texto Responsivo em Containers */
+    @media (max-width: 768px) {
+      h3 {
+        font-size: 1.125rem !important;
+      }
+
+      h2 {
+        font-size: 1.375rem !important;
+      }
+
+      p {
+        font-size: 0.9375rem !important;
+        margin-bottom: 1rem !important;
+      }
+    }
+
     /* Header */
     header {
       position: fixed;
@@ -1238,7 +1461,7 @@
   <header id="header">
     <div class="header-inner">
       <a href="#inicio" class="logo">
-        <img src="assets/trend-hair-logo.png" alt="Trend Hair">
+        <img loading="lazy" src="assets/trend-hair-logo.png" alt="Trend Hair">
       </a>
       <nav class="desktop-nav">
         <a href="#inicio">Início</a>
@@ -1286,7 +1509,7 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="assets/photos/hero.jpg" alt="Mulher elegante em atendimento no Trend Hair">
+        <img loading="lazy" src="assets/photos/hero.jpg" alt="Mulher elegante em atendimento no Trend Hair">
       </div>
     </section>
 
@@ -1315,7 +1538,7 @@
     <!-- About Section -->
     <section class="about-section" id="sobre">
       <div class="about-image">
-        <img src="assets/photos/sobre.jpg" alt="Interior do salão Trend Hair">
+        <img loading="lazy" src="assets/photos/sobre.jpg" alt="Interior do salão Trend Hair">
       </div>
       <div class="about-content">
         <p class="tagline">Sobre o Trend Hair</p>
@@ -1351,61 +1574,61 @@
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <img src="assets/photos/servico-corte-feminino.jpg" alt="Corte Feminino" class="service-image">
+          <img loading="lazy" src="assets/photos/servico-corte-feminino.jpg" alt="Corte Feminino" class="service-image">
           <div class="service-info">
             <p class="service-name">Corte Feminino</p>
           </div>
         </div>
         <div class="service-card">
-          <img src="assets/photos/servico-coloracao.jpg" alt="Coloração" class="service-image">
+          <img loading="lazy" src="assets/photos/servico-coloracao.jpg" alt="Coloração" class="service-image">
           <div class="service-info">
             <p class="service-name">Coloração</p>
           </div>
         </div>
         <div class="service-card">
-          <img src="assets/photos/servico-mechas.jpg" alt="Mechas" class="service-image">
+          <img loading="lazy" src="assets/photos/servico-mechas.jpg" alt="Mechas" class="service-image">
           <div class="service-info">
             <p class="service-name">Mechas</p>
           </div>
         </div>
         <div class="service-card">
-          <img src="assets/photos/servico-escova.jpg" alt="Escova" class="service-image">
+          <img loading="lazy" src="assets/photos/servico-escova.jpg" alt="Escova" class="service-image">
           <div class="service-info">
             <p class="service-name">Escova</p>
           </div>
         </div>
         <div class="service-card">
-          <img src="assets/photos/servico-tratamentos.jpg" alt="Tratamentos Capilares" class="service-image">
+          <img loading="lazy" src="assets/photos/servico-tratamentos.jpg" alt="Tratamentos Capilares" class="service-image">
           <div class="service-info">
             <p class="service-name">Tratamentos Capilares</p>
           </div>
         </div>
         <div class="service-card">
-          <img src="assets/photos/servico-manicure.jpg" alt="Manicure" class="service-image">
+          <img loading="lazy" src="assets/photos/servico-manicure.jpg" alt="Manicure" class="service-image">
           <div class="service-info">
             <p class="service-name">Manicure</p>
           </div>
         </div>
         <div class="service-card">
-          <img src="assets/photos/servico-pedicure.jpg" alt="Pedicure" class="service-image">
+          <img loading="lazy" src="assets/photos/servico-pedicure.jpg" alt="Pedicure" class="service-image">
           <div class="service-info">
             <p class="service-name">Pedicure</p>
           </div>
         </div>
         <div class="service-card">
-          <img src="assets/photos/servico-sobrancelhas.jpg" alt="Sobrancelhas" class="service-image">
+          <img loading="lazy" src="assets/photos/servico-sobrancelhas.jpg" alt="Sobrancelhas" class="service-image">
           <div class="service-info">
             <p class="service-name">Sobrancelhas</p>
           </div>
         </div>
         <div class="service-card">
-          <img src="assets/photos/servico-maquiagem.jpg" alt="Maquiagem" class="service-image">
+          <img loading="lazy" src="assets/photos/servico-maquiagem.jpg" alt="Maquiagem" class="service-image">
           <div class="service-info">
             <p class="service-name">Maquiagem</p>
           </div>
         </div>
         <div class="service-card">
-          <img src="assets/photos/servico-penteados.jpg" alt="Penteados" class="service-image">
+          <img loading="lazy" src="assets/photos/servico-penteados.jpg" alt="Penteados" class="service-image">
           <div class="service-info">
             <p class="service-name">Penteados</p>
           </div>
@@ -1426,31 +1649,31 @@
         <div class="ba-carousel" id="baCarousel">
           <div class="ba-pair">
             <div class="ba-image-wrapper">
-              <img src="assets/photos/ba-antes-1.jpg" alt="Antes" class="ba-image">
+              <img loading="lazy" src="assets/photos/ba-antes-1.jpg" alt="Antes" class="ba-image">
               <span class="ba-label before">Antes</span>
             </div>
             <div class="ba-image-wrapper">
-              <img src="assets/photos/ba-depois-1.jpg" alt="Depois" class="ba-image">
+              <img loading="lazy" src="assets/photos/ba-depois-1.jpg" alt="Depois" class="ba-image">
               <span class="ba-label after">Depois</span>
             </div>
           </div>
           <div class="ba-pair">
             <div class="ba-image-wrapper">
-              <img src="assets/photos/ba-antes-2.jpg" alt="Antes" class="ba-image">
+              <img loading="lazy" src="assets/photos/ba-antes-2.jpg" alt="Antes" class="ba-image">
               <span class="ba-label before">Antes</span>
             </div>
             <div class="ba-image-wrapper">
-              <img src="assets/photos/ba-depois-2.jpg" alt="Depois" class="ba-image">
+              <img loading="lazy" src="assets/photos/ba-depois-2.jpg" alt="Depois" class="ba-image">
               <span class="ba-label after">Depois</span>
             </div>
           </div>
           <div class="ba-pair">
             <div class="ba-image-wrapper">
-              <img src="assets/photos/ba-antes-3.jpg" alt="Antes" class="ba-image">
+              <img loading="lazy" src="assets/photos/ba-antes-3.jpg" alt="Antes" class="ba-image">
               <span class="ba-label before">Antes</span>
             </div>
             <div class="ba-image-wrapper">
-              <img src="assets/photos/ba-depois-3.jpg" alt="Depois" class="ba-image">
+              <img loading="lazy" src="assets/photos/ba-depois-3.jpg" alt="Depois" class="ba-image">
               <span class="ba-label after">Depois</span>
             </div>
           </div>
@@ -1651,7 +1874,7 @@
       <div class="footer-grid">
         <div>
           <div class="footer-logo">
-            <img src="assets/trend-hair-logo.png" alt="Trend Hair">
+            <img loading="lazy" src="assets/trend-hair-logo.png" alt="Trend Hair">
           </div>
           <p class="footer-text">Salão de beleza premium em Porto Alegre. Luxo acessível, confiança e bem-estar em cada detalhe.</p>
         </div>
