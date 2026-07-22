@@ -911,7 +911,8 @@
     .logo {
       display: flex;
       align-items: center;
-      height: auto;
+      justify-content: center;
+      height: 100%;
       flex-shrink: 0;
     }
 
@@ -920,11 +921,18 @@
       width: auto;
       object-fit: contain;
       filter: grayscale(1) contrast(1.1);
+      display: block;
     }
 
     @media (max-width: 768px) {
       .logo img {
-        height: 24px;
+        height: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo img {
+        height: 26px;
       }
     }
 
