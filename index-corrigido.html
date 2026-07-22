@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Salão de beleza premium em Porto Alegre. Corte, coloração, tratamentos capilares, manicure e mais. Profissionais especializadas, ambiente elegante, 4.8★ com +530 avaliações.">
+<meta name="keywords" content="salão de beleza porto alegre, corte feminino, coloração, mechas, escova, manicure, pedicure, tratamentos capilares">
+<meta name="author" content="Trend Hair">
+<meta name="theme-color" content="#111111">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://seu-dominio.com/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://seu-dominio.com/">
+<meta property="og:title" content="Trend Hair · Salão de Beleza Premium em Porto Alegre">
+<meta property="og:description" content="Experiência completa em beleza, autoestima e bem-estar. Clientes satisfeitas com 4.8★ e +530 avaliações.">
+<meta property="og:image" content="https://seu-dominio.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://seu-dominio.com/">
+<meta name="twitter:title" content="Trend Hair · Salão de Beleza Premium">
+<meta name="twitter:description" content="Profissionais especializadas, produtos premium e ambiente sofisticado em Porto Alegre.">
+<meta name="twitter:image" content="https://seu-dominio.com/assets/og-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Title -->
+<title>Trend Hair · Salão de Beleza Premium em Porto Alegre</title>
+
+<!-- Scripts -->
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body{margin:0;background:#ffffff;color:#111111;-webkit-font-smoothing:antialiased;}
+  a{color:#111111;text-decoration:none;}
+  a:hover{color:#C7A46A;}
+  ::selection{background:#C7A46A;color:#ffffff;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+</style>
+</helmet>
+
+<div style="width:100%;max-width:1400px;margin:0 auto;font-family:'Inter',sans-serif;color:#111111;overflow-x:hidden;position:relative;" data-screen-label="Trend Hair LP">
+
+  <div ref="{{ headerSentinelRef }}" style="position:absolute;top:0;height:1px;width:1px;"></div>
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;background:{{ headerBg }};backdrop-filter:blur(14px);border-bottom:1px solid {{ headerBorder }};transition:background 0.4s ease, border-color 0.4s ease;">
+    <div style="width:100%;max-width:1400px;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:76px;">
+      <a href="#inicio" style="display:flex;align-items:center;height:34px;">
+        <img src="/assets/trend-hair-logo.png" alt="Trend Hair" style="height:32px;width:auto;object-fit:contain;filter:grayscale(1) contrast(1.1);">
+      </a>
+      <nav style="display:flex;align-items:center;gap:40px;" class="desktop-nav">
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
+          <a href="{{ item.href }}" style="font-size:14px;letter-spacing:0.03em;color:#111111;font-weight:500;">{{ item.label }}</a>
+        </sc-for>
+      </nav>
+      <div style="display:flex;align-items:center;gap:20px;">
+        <a href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:none;" class="desktop-cta-wrap"></a>
+        <a href="{{ whatsappLink }}" target="_blank" rel="noopener" style="background:#C7A46A;color:#111111;padding:12px 26px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:0.03em;white-space:nowrap;transition:transform 0.25s ease, box-shadow 0.25s ease;box-shadow:0 6px 20px rgba(199,164,106,0.0);" style-hover="background:#b8925a;color:#111111;transform:translateY(-2px);box-shadow:0 10px 24px rgba(199,164,106,0.35);" class="hide-mobile">Agendar Horário</a>
+        <button onClick="{{ toggleMenu }}" aria-label="Abrir menu" style="display:none;width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;" class="hamburger-btn">
+          <div style="width:22px;position:relative;height:14px;">
+            <span style="position:absolute;top:0;left:0;width:100%;height:1.5px;background:#111111;transition:transform 0.3s ease, opacity 0.3s ease;transform:{{ barTopTransform }};"></span>
+            <span style="position:absolute;top:6px;left:0;width:100%;height:1.5px;background:#111111;opacity:{{ barMidOpacity }};transition:opacity 0.3s ease;"></span>
+            <span style="position:absolute;top:12px;left:0;width:100%;height:1.5px;background:#111111;transition:transform 0.3s ease;transform:{{ barBotTransform }};"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:45;background:#ffffff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px;">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
+        <a href="{{ item.href }}" onClick="{{ closeMenu }}" style="font-family:'Playfair Display',serif;font-size:30px;color:#111111;">{{ item.label }}</a>
+      </sc-for>
+      <a href="{{ whatsappLink }}" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="margin-top:16px;background:#C7A46A;color:#111111;padding:16px 40px;border-radius:999px;font-size:15px;font-weight:600;">Agendar pelo WhatsApp</a>
+    </div>
+  </sc-if>
+
+  <section id="inicio" style="display:flex;align-items:stretch;min-height:100dvh;padding-top:76px;">
+    <div style="flex:1 1 50%;min-width:0;padding:0 min(6vw,72px);display:flex;flex-direction:column;justify-content:center;gap:28px;" class="hero-copy">
+      <div style="animation:fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both;">
+        <p style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C7A46A;font-weight:600;margin:0 0 18px;">Trend Hair · Porto Alegre</p>
+        <h1 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,4.4vw,58px);line-height:1.12;margin:0 0 22px;max-width:14ch;">Sua beleza merece um atendimento à altura.</h1>
+        <p style="font-size:18px;line-height:1.6;color:#4a4a4a;max-width:46ch;margin:0;">Mais do que um salão, oferecemos uma experiência completa em beleza, autoestima e bem-estar.</p>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;animation:fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.15s both;">
+        <a href="{{ whatsappLink }}" target="_blank" rel="noopener" style="background:#111111;color:#ffffff;padding:17px 32px;border-radius:999px;font-size:15px;font-weight:600;transition:transform 0.25s ease, background 0.25s ease, color 0.25s ease;" style-hover="background:#C7A46A;color:#111111;transform:translateY(-2px);">Agendar pelo WhatsApp</a>
+        <a href="#servicos" style="border:1px solid #D9D9D9;color:#111111;padding:17px 32px;border-radius:999px;font-size:15px;font-weight:600;transition:border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color:#111111;transform:translateY(-2px);">Conhecer Serviços</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;animation:fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.3s both;">
+        <span style="color:#C7A46A;font-size:18px;letter-spacing:2px;">★★★★★</span>
+        <span style="font-size:15px;color:#111111;font-weight:600;">{{ ratingDisplay }} estrelas</span>
+        <span style="width:1px;height:16px;background:#D9D9D9;"></span>
+        <span style="font-size:15px;color:#4a4a4a;">+{{ reviewsDisplay }} avaliações</span>
+        <span style="width:1px;height:16px;background:#D9D9D9;" class="hide-mobile"></span>
+        <span style="font-size:15px;color:#4a4a4a;" class="hide-mobile">Clientes satisfeitas</span>
+      </div>
+    </div>
+    <div style="flex:1 1 50%;min-width:0;position:relative;" class="hero-image">
+      <img src="/assets/photos/hero.jpg" alt="Mulher elegante em atendimento no Trend Hair" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    </div>
+  </section>
+
+  <section style="padding:80px 40px;background:#F7F7F7;">
+    <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#D9D9D9;border-radius:16px;overflow:hidden;" class="benefit-grid">
+      <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
+        <div style="background:#ffffff;padding:40px 28px;display:flex;flex-direction:column;align-items:flex-start;gap:18px;">
+          <sc-if value="{{ b.iconCircle }}" hint-placeholder-val="{{ true }}">
+            <div style="width:40px;height:40px;border-radius:50%;border:1.5px solid #C7A46A;"></div>
+          </sc-if>
+          <sc-if value="{{ b.iconDouble }}" hint-placeholder-val="{{ false }}">
+            <div style="position:relative;width:44px;height:32px;">
+              <div style="position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;border:1.5px solid #C7A46A;"></div>
+              <div style="position:absolute;left:16px;top:0;width:28px;height:28px;border-radius:50%;border:1.5px solid #C7A46A;background:#fff;"></div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ b.iconDiamond }}" hint-placeholder-val="{{ false }}">
+            <div style="width:28px;height:28px;border:1.5px solid #C7A46A;transform:rotate(45deg);"></div>
+          </sc-if>
+          <sc-if value="{{ b.iconSquare }}" hint-placeholder-val="{{ false }}">
+            <div style="width:32px;height:32px;border:1.5px solid #C7A46A;position:relative;">
+              <div style="position:absolute;left:6px;right:6px;top:15px;height:1.5px;background:#C7A46A;"></div>
+            </div>
+          </sc-if>
+          <p style="font-family:'Playfair Display',serif;font-size:19px;margin:0;">{{ b.label }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="sobre" style="padding:120px 40px;display:flex;align-items:center;gap:80px;" class="about-section">
+    <div style="flex:1 1 55%;min-width:0;">
+      <img src="/assets/salon-interior.jpg" alt="Interior do salão Trend Hair" style="width:100%;height:520px;object-fit:cover;border-radius:20px;display:block;">
+    </div>
+    <div style="flex:1 1 45%;min-width:0;">
+      <p style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C7A46A;font-weight:600;margin:0 0 18px;">Sobre o Trend Hair</p>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1.2;margin:0 0 24px;">Um espaço para cuidar de você por inteiro.</h2>
+      <p style="font-size:16px;line-height:1.8;color:#4a4a4a;margin:0 0 20px;">Há anos recebemos mulheres de Porto Alegre em um ambiente elegante, pensado em cada detalhe: da cafeteria acolhedora ao jardim que convida ao descanso entre um serviço e outro.</p>
+      <p style="font-size:16px;line-height:1.8;color:#4a4a4a;margin:0 0 32px;">Nossa equipe de profissionais experientes trabalha com atendimento personalizado, unindo técnica, escuta e produtos premium para revelar o melhor da sua beleza.</p>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <sc-for list="{{ aboutHighlights }}" as="h" hint-placeholder-count="4">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#C7A46A;flex:none;"></div>
+            <span style="font-size:15px;color:#111111;">{{ h }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" style="padding:120px 40px;">
+    <div style="max-width:1320px;margin:0 auto;">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:56px;flex-wrap:wrap;">
+        <div>
+          <p style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C7A46A;font-weight:600;margin:0 0 16px;">Serviços</p>
+          <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3vw,40px);margin:0;max-width:14ch;">Cuidados pensados para cada momento da sua rotina.</h2>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;" class="services-grid">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="10">
+          <div style="border-radius:16px;overflow:hidden;background:#F7F7F7;transition:transform 0.35s ease, box-shadow 0.35s ease;" style-hover="transform:translateY(-6px);box-shadow:0 20px 40px rgba(17,17,17,0.08);">
+            <image-slot id="service-{{ s.seed }}" src="{{ s.photo }}" placeholder="foto: {{ s.name }}" shape="rect" style="width:100%;height:220px;display:block;"></image-slot>
+            <div style="padding:20px 22px 24px;">
+              <p style="font-family:'Playfair Display',serif;font-size:18px;margin:0;">{{ s.name }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;justify-content:center;margin-top:48px;">
+        <a href="{{ whatsappLink }}" target="_blank" rel="noopener" style="border:1px solid #111111;color:#111111;padding:16px 36px;border-radius:999px;font-size:14px;font-weight:600;transition:background 0.25s ease, color 0.25s ease;" style-hover="background:#111111;color:#ffffff;">Ver todos os serviços</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="antes-depois" style="padding:100px 40px;background:#111111;color:#ffffff;">
+    <div style="max-width:1320px;margin:0 auto;">
+      <div style="text-align:center;max-width:640px;margin:0 auto 56px;">
+        <p style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C7A46A;font-weight:600;margin:0 0 16px;">Transformações</p>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3vw,40px);margin:0;">Antes e Depois</h2>
+      </div>
+      <div style="position:relative;overflow:hidden;border-radius:20px;">
+        <div style="display:flex;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);transform:{{ baTransform }};">
+          <sc-for list="{{ beforeAfterPairs }}" as="pair" hint-placeholder-count="3">
+            <div style="flex:0 0 100%;display:grid;grid-template-columns:1fr 1fr;gap:2px;">
+              <div style="position:relative;">
+                <image-slot id="ba-before-{{ $index }}" src="{{ pair.beforePhoto }}" placeholder="foto: antes" shape="rect" style="width:100%;height:440px;display:block;"></image-slot>
+                <span style="position:absolute;bottom:20px;left:20px;background:rgba(17,17,17,0.55);color:#fff;padding:6px 16px;border-radius:999px;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;">Antes</span>
+              </div>
+              <div style="position:relative;">
+                <image-slot id="ba-after-{{ $index }}" src="{{ pair.afterPhoto }}" placeholder="foto: depois" shape="rect" style="width:100%;height:440px;display:block;"></image-slot>
+                <span style="position:absolute;bottom:20px;left:20px;background:rgba(199,164,106,0.95);color:#111111;padding:6px 16px;border-radius:999px;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;">Depois</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;gap:14px;margin-top:32px;">
+        <button onClick="{{ prevBA }}" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,0.3);background:none;color:#fff;cursor:pointer;font-size:18px;transition:border-color 0.2s ease;" aria-label="Anterior">←</button>
+        <button onClick="{{ nextBA }}" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,0.3);background:none;color:#fff;cursor:pointer;font-size:18px;transition:border-color 0.2s ease;" aria-label="Próximo">→</button>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:120px 40px;">
+    <div style="max-width:1320px;margin:0 auto;">
+      <div style="text-align:center;max-width:640px;margin:0 auto 56px;">
+        <p style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C7A46A;font-weight:600;margin:0 0 16px;">O Espaço</p>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3vw,40px);margin:0;">Nossa Estrutura</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="structure-grid">
+        <sc-for list="{{ structure }}" as="st" hint-placeholder-count="6">
+          <div style="border-radius:16px;overflow:hidden;position:relative;">
+            <image-slot id="structure-{{ st.seed }}" src="{{ st.photo }}" placeholder="foto: {{ st.name }}" shape="rect" style="width:100%;height:260px;display:block;"></image-slot>
+            <div style="position:absolute;left:0;right:0;bottom:0;padding:20px;background:linear-gradient(0deg,rgba(17,17,17,0.65),transparent);">
+              <p style="font-family:'Playfair Display',serif;font-size:18px;color:#ffffff;margin:0;">{{ st.name }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:120px 40px;background:#F7F7F7;display:flex;gap:80px;align-items:flex-start;" class="differentials-section">
+    <div style="flex:1 1 40%;min-width:0;position:sticky;top:120px;">
+      <p style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C7A46A;font-weight:600;margin:0 0 16px;">Diferenciais</p>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3vw,40px);margin:0;max-width:12ch;">O que torna sua experiência única.</h2>
+    </div>
+    <div style="flex:1 1 60%;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:20px 40px;" class="differentials-grid">
+      <sc-for list="{{ differentials }}" as="d" hint-placeholder-count="8">
+        <div style="display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid #D9D9D9;">
+          <span style="color:#C7A46A;font-size:16px;">✔</span>
+          <span style="font-size:16px;">{{ d }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="avaliacoes" style="padding:120px 40px;">
+    <div style="max-width:1320px;margin:0 auto;display:flex;gap:80px;align-items:center;" class="reviews-section">
+      <div style="flex:0 0 280px;text-align:center;border-right:1px solid #D9D9D9;padding-right:60px;" class="reviews-aside">
+        <p style="font-family:'Playfair Display',serif;font-size:64px;margin:0;line-height:1;">{{ ratingDisplay }}</p>
+        <p style="color:#C7A46A;font-size:20px;letter-spacing:3px;margin:14px 0;">★★★★★</p>
+        <p style="font-size:15px;color:#4a4a4a;margin:0;">+{{ reviewsDisplay }} avaliações no Google</p>
+      </div>
+      <div style="flex:1 1 auto;min-width:0;">
+        <div style="min-height:150px;">
+          <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,2.4vw,28px);line-height:1.5;margin:0 0 24px;max-width:32ch;">"{{ currentTestimonial.text }}"</p>
+          <p style="color:#C7A46A;font-size:16px;letter-spacing:2px;margin:0 0 8px;">★★★★★</p>
+          <p style="font-size:14px;color:#4a4a4a;margin:0;">Avaliação verificada no Google</p>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:40px;">
+          <sc-for list="{{ testimonials }}" as="tm" hint-placeholder-count="3">
+            <button onClick="{{ tm.selectFn }}" aria-label="Ver avaliação {{ $index + 1 }}" style="padding:18px 6px;margin:-18px -6px;background:none;border:none;cursor:pointer;display:flex;align-items:center;"><span style="width:{{ tm.dotSize }};height:8px;border-radius:999px;background:{{ tm.dotColor }};transition:width 0.3s ease, background 0.3s ease;display:block;"></span></button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:120px 40px;background:#111111;color:#ffffff;">
+    <div style="max-width:1000px;margin:0 auto;">
+      <p style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C7A46A;font-weight:600;margin:0 0 48px;text-align:center;">Como Funciona</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;" class="how-grid">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+          <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;">
+            <div style="width:56px;height:56px;border-radius:50%;border:1px solid #C7A46A;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;color:#C7A46A;">{{ st.n }}</div>
+            <p style="font-size:15px;line-height:1.5;margin:0;max-width:18ch;">{{ st.label }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:140px 40px;text-align:center;background:#F7F7F7;position:relative;overflow:hidden;">
+    <div style="max-width:720px;margin:0 auto;position:relative;z-index:1;">
+      <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(32px,4vw,52px);margin:0 0 22px;line-height:1.15;">Reserve seu horário hoje mesmo.</h2>
+      <p style="font-size:17px;color:#4a4a4a;margin:0 0 40px;">Atendimento personalizado para valorizar ainda mais sua beleza.</p>
+      <a href="{{ whatsappLink }}" target="_blank" rel="noopener" style="display:inline-block;background:#C7A46A;color:#111111;padding:20px 48px;border-radius:999px;font-size:16px;font-weight:600;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(199,164,106,0.4);">Agendar pelo WhatsApp</a>
+    </div>
+  </section>
+
+  <section style="padding:120px 40px;">
+    <div style="max-width:860px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:56px;">
+        <p style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C7A46A;font-weight:600;margin:0 0 16px;">Dúvidas</p>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,3vw,40px);margin:0;">Perguntas Frequentes</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+          <div style="border-bottom:1px solid #D9D9D9;">
+            <button onClick="{{ f.toggleFn }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 4px;background:none;border:none;text-align:left;cursor:pointer;">
+              <span style="font-family:'Playfair Display',serif;font-size:18px;color:#111111;">{{ f.q }}</span>
+              <span style="font-size:20px;color:#C7A46A;transition:transform 0.3s ease;transform:{{ f.iconTransform }};flex:none;">+</span>
+            </button>
+            <div style="max-height:{{ f.maxHeight }};overflow:hidden;transition:max-height 0.4s ease;">
+              <p style="font-size:15px;line-height:1.7;color:#4a4a4a;margin:0 0 26px;padding:0 4px;max-width:65ch;">{{ f.a }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" style="padding:120px 40px;background:#F7F7F7;">
+    <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;" class="location-grid">
+      <div style="border-radius:20px;overflow:hidden;min-height:420px;">
+        <iframe title="Mapa Trend Hair" loading="lazy" src="https://www.google.com/maps?q=Av.+Get%C3%BAlio+Vargas+1671+Porto+Alegre&amp;output=embed" style="width:100%;height:100%;border:0;min-height:420px;display:block;"></iframe>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:24px;">
+        <p style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C7A46A;font-weight:600;margin:0;">Localização</p>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,2.8vw,36px);margin:0;">Venha nos visitar em Porto Alegre.</h2>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:16px;margin:0;color:#111111;">Av. Getúlio Vargas, 1671 · Menino Deus · Porto Alegre</p>
+          <p style="font-size:16px;margin:0;color:#111111;"><a href="tel:+5551309303 93" style="color:inherit;">(51) 3093-0393</a></p>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;">
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.+Get%C3%BAlio+Vargas+1671+Porto+Alegre" target="_blank" rel="noopener" style="border:1px solid #111111;color:#111111;padding:16px 30px;border-radius:999px;font-size:14px;font-weight:600;transition:background 0.25s ease, color 0.25s ease;" style-hover="background:#111111;color:#ffffff;">Como Chegar</a>
+          <a href="{{ whatsappLink }}" target="_blank" rel="noopener" style="background:#C7A46A;color:#111111;padding:16px 30px;border-radius:999px;font-size:14px;font-weight:600;transition:transform 0.25s ease;" style-hover="transform:translateY(-2px);">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:80px 40px 40px;background:#111111;color:#ffffff;">
+    <div style="max-width:1320px;margin:0 auto;">
+      <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,0.14);" class="footer-grid">
+        <div>
+          <div style="background:#ffffff;border-radius:8px;padding:8px 16px;display:inline-block;margin-bottom:20px;">
+            <img src="/assets/trend-hair-logo.png" alt="Trend Hair" style="height:26px;width:auto;object-fit:contain;display:block;">
+          </div>
+          <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,0.6);max-width:32ch;margin:0;">Salão de beleza premium em Porto Alegre. Luxo acessível, confiança e bem-estar em cada detalhe.</p>
+        </div>
+        <div>
+          <p style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#C7A46A;margin:0 0 20px;">Redes Sociais</p>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <a href="https://www.instagram.com/estetica_trendhair/" target="_blank" rel="noopener" style="font-size:14px;color:rgba(255,255,255,0.75);">Instagram</a>
+            <a href="https://www.facebook.com/trend.hair.rs/" target="_blank" rel="noopener" style="font-size:14px;color:rgba(255,255,255,0.75);">Facebook</a>
+            <a href="{{ whatsappLink }}" target="_blank" rel="noopener" style="font-size:14px;color:rgba(255,255,255,0.75);">WhatsApp</a>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#C7A46A;margin:0 0 20px;">Endereço &amp; Horário</p>
+          <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;margin:0 0 14px;">Av. Getúlio Vargas, 1671<br>Menino Deus, Porto Alegre</p>
+          <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;margin:0;">Terça a Sábado<br>09h às 20h</p>
+        </div>
+        <div>
+          <p style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#C7A46A;margin:0 0 20px;">Links Úteis</p>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <a href="#" style="font-size:14px;color:rgba(255,255,255,0.75);">Política de Privacidade</a>
+            <a href="#contato" style="font-size:14px;color:rgba(255,255,255,0.75);">Contato</a>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.4);text-align:center;margin:32px 0 0;">© 2026 Trend Hair. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="{{ whatsappLink }}" target="_blank" rel="noopener" style="position:fixed;bottom:28px;right:28px;z-index:60;width:60px;height:60px;border-radius:50%;background:#111111;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(17,17,17,0.3);transition:transform 0.25s ease;" style-hover="transform:scale(1.08);" aria-label="Agendar pelo WhatsApp" title="Fale conosco no WhatsApp">
+    <img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="" style="width:28px;height:28px;display:block;" loading="lazy" />
+  </a>
+
+  <helmet>
+  <style>
+    @media (max-width: 900px) {
+      .desktop-nav, .hide-mobile { display: none !important; }
+      .hamburger-btn { display: flex !important; }
+      .hero-copy, .about-section, .differentials-section, .reviews-section, .location-grid { flex-direction: column !important; }
+      .hero-image { min-height: 420px; }
+      .benefit-grid, .team-grid, .services-grid, .structure-grid, .how-grid, .footer-grid { grid-template-columns: repeat(2,1fr) !important; }
+      .differentials-grid { grid-template-columns: 1fr !important; }
+      .reviews-aside { border-right: none !important; padding-right: 0 !important; border-bottom: 1px solid #D9D9D9; padding-bottom: 40px; }
+      .location-grid { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width: 560px) {
+      .benefit-grid, .team-grid, .services-grid, .structure-grid, .how-grid, .footer-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+  </helmet>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    menuOpen: false,
+    scrolled: false,
+    testimonialIndex: 0,
+    baIndex: 0,
+    faqOpen: 0,
+    ratingDisplay: '0.0',
+    reviewsDisplay: '0',
+  };
+
+  navItems = [
+    { label: 'Início', href: '#inicio' },
+    { label: 'Serviços', href: '#servicos' },
+    { label: 'Avaliações', href: '#avaliacoes' },
+    { label: 'Contato', href: '#contato' },
+  ];
+
+  benefits = [
+    { label: 'Ambiente Climatizado', iconCircle: true, iconDouble: false, iconDiamond: false, iconSquare: false },
+    { label: 'Profissionais Especializadas', iconCircle: false, iconDouble: true, iconDiamond: false, iconSquare: false },
+    { label: 'Produtos Premium', iconCircle: false, iconDouble: false, iconDiamond: true, iconSquare: false },
+    { label: 'Agendamento Fácil', iconCircle: false, iconDouble: false, iconDiamond: false, iconSquare: true },
+  ];
+
+  aboutHighlights = ['Ambiente elegante e climatizado', 'Cafeteria e jardim internos', 'Profissionais experientes', 'Atendimento personalizado'];
+
+  services = [
+    { name: 'Corte Feminino', seed: 'corte-feminino', photo: '/assets/photos/servico-corte-feminino.jpg' },
+    { name: 'Coloração', seed: 'coloracao', photo: '/assets/photos/servico-coloracao.jpg' },
+    { name: 'Mechas', seed: 'mechas', photo: '/assets/photos/servico-mechas.jpg' },
+    { name: 'Escova', seed: 'escova', photo: '/assets/photos/servico-escova.jpg' },
+    { name: 'Tratamentos Capilares', seed: 'tratamentos', photo: '/assets/photos/servico-tratamentos.jpg' },
+    { name: 'Manicure', seed: 'manicure', photo: '/assets/photos/servico-manicure.jpg' },
+    { name: 'Pedicure', seed: 'pedicure', photo: '/assets/photos/servico-pedicure.jpg' },
+    { name: 'Sobrancelhas', seed: 'sobrancelhas', photo: '/assets/photos/servico-sobrancelhas.jpg' },
+    { name: 'Maquiagem', seed: 'maquiagem', photo: '/assets/photos/servico-maquiagem.jpg' },
+    { name: 'Penteados', seed: 'penteados', photo: '/assets/photos/servico-penteados.jpg' },
+  ];
+
+  structure = [
+    { name: 'Recepção', seed: 'recepcao', photo: '/assets/photos/estrutura-recepcao.jpg' },
+    { name: 'Espaço Interno', seed: 'espaco-interno', photo: '/assets/photos/estrutura-espaco-interno.jpg' },
+    { name: 'Cafeteria', seed: 'cafeteria', photo: null },
+    { name: 'Jardim', seed: 'jardim', photo: '/assets/photos/estrutura-jardim.jpg' },
+    { name: 'Sala de Lavagem', seed: 'lavagem', photo: '/assets/photos/estrutura-lavagem.jpg' },
+    { name: 'Espaço Manicure', seed: 'espaco-manicure', photo: null },
+  ];
+
+  differentials = [
+    'Atendimento personalizado',
+    'Produtos profissionais',
+    'Ambiente sofisticado',
+    'Profissionais especializados',
+    'Horários flexíveis',
+    'Excelente localização',
+    'Atendimento humanizado',
+    'Alta avaliação no Google',
+  ];
+
+  testimonialsData = [
+    { text: 'Profissionais excelentes, ambiente acolhedor e ótimos produtos.' },
+    { text: 'Ótimas profissionais, serviço excelente e preços em conta.' },
+    { text: 'Espaço maravilhoso, cafeteria linda e atendimento impecável.' },
+  ];
+
+  beforeAfterPairs = [
+    { beforePhoto: '/assets/photos/ba-antes-1.jpg', afterPhoto: '/assets/photos/ba-depois-1.jpg' },
+    { beforePhoto: '/assets/photos/ba-antes-2.jpg', afterPhoto: '/assets/photos/ba-depois-2.jpg' },
+    { beforePhoto: '/assets/photos/ba-antes-3.jpg', afterPhoto: '/assets/photos/ba-depois-3.jpg' },
+  ];
+
+  stepsData = [
+    { n: '1', label: 'Escolha o serviço' },
+    { n: '2', label: 'Agende pelo WhatsApp' },
+    { n: '3', label: 'Confirme o horário' },
+    { n: '4', label: 'Venha viver sua experiência' },
+  ];
+
+  faqsData = [
+    { q: 'Quanto tempo dura o atendimento?', a: 'Depende do serviço escolhido: um corte leva cerca de 40 minutos, enquanto coloração e mechas podem levar de 2 a 4 horas. Ao agendar pelo WhatsApp, nossa equipe informa o tempo estimado do seu atendimento.' },
+    { q: 'Precisa agendar?', a: 'Recomendamos agendar com antecedência para garantir o melhor horário, mas também recebemos clientes espontâneas conforme a disponibilidade da agenda.' },
+    { q: 'Aceitam cartão?', a: 'Sim. Aceitamos cartão de crédito, débito, PIX e dinheiro.' },
+    { q: 'Fazem atendimento para noivas?', a: 'Sim, temos um pacote completo para noivas, incluindo teste de penteado e maquiagem, com atendimento exclusivo no grande dia.' },
+    { q: 'Tem estacionamento?', a: 'Sim, contamos com vagas próximas ao salão para maior comodidade das clientes.' },
+    { q: 'Quais os horários?', a: 'Funcionamos de terça a sábado. Consulte os horários exatos e disponibilidade pelo WhatsApp.' },
+  ];
+
+  whatsappLink = 'https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair.';
+
+  componentDidMount() {
+    const el = this._headerSentinel;
+    if (el && 'IntersectionObserver' in window) {
+      this._observer = new IntersectionObserver(
+        (entries) => this.setState({ scrolled: !entries[0].isIntersecting }),
+        { threshold: 0 }
+      );
+      this._observer.observe(el);
+    }
+    this._testimonialTimer = setInterval(() => {
+      this.setState((s) => ({ testimonialIndex: (s.testimonialIndex + 1) % this.testimonialsData.length }));
+    }, 6000);
+    this._animateCounters();
+  }
+
+  componentWillUnmount() {
+    if (this._observer) this._observer.disconnect();
+    if (this._testimonialTimer) clearInterval(this._testimonialTimer);
+  }
+
+  _animateCounters() {
+    const duration = 1200;
+    const start = performance.now();
+    const targetRating = 4.8;
+    const targetReviews = 530;
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      this.setState({
+        ratingDisplay: (targetRating * eased).toFixed(1),
+        reviewsDisplay: Math.round(targetReviews * eased).toString(),
+      });
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  toggleMenu = () => this.setState((s) => ({ menuOpen: !s.menuOpen }));
+  closeMenu = () => this.setState({ menuOpen: false });
+  nextBA = () => this.setState((s) => ({ baIndex: (s.baIndex + 1) % this.beforeAfterPairs.length }));
+  prevBA = () => this.setState((s) => ({ baIndex: (s.baIndex - 1 + this.beforeAfterPairs.length) % this.beforeAfterPairs.length }));
+
+  renderVals() {
+    const scrolled = this.state.scrolled;
+    const testimonials = this.testimonialsData.map((tm, i) => ({
+      ...tm,
+      selectFn: () => this.setState({ testimonialIndex: i }),
+      dotColor: i === this.state.testimonialIndex ? '#C7A46A' : '#D9D9D9',
+      dotSize: i === this.state.testimonialIndex ? '28px' : '8px',
+    }));
+    const faqs = this.faqsData.map((f, i) => ({
+      ...f,
+      toggleFn: () => this.setState((s) => ({ faqOpen: s.faqOpen === i ? -1 : i })),
+      iconTransform: this.state.faqOpen === i ? 'rotate(45deg)' : 'rotate(0deg)',
+      maxHeight: this.state.faqOpen === i ? '320px' : '0px',
+    }));
+    return {
+      headerSentinelRef: (el) => { this._headerSentinel = el; },
+      headerBg: scrolled ? 'rgba(255,255,255,0.92)' : 'rgba(255,255,255,0.0)',
+      headerBorder: scrolled ? '#D9D9D9' : 'rgba(217,217,217,0)',
+      navItems: this.navItems,
+      whatsappLink: this.whatsappLink,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: this.toggleMenu,
+      closeMenu: this.closeMenu,
+      barTopTransform: this.state.menuOpen ? 'translateY(6px) rotate(45deg)' : 'none',
+      barBotTransform: this.state.menuOpen ? 'translateY(-6px) rotate(-45deg)' : 'none',
+      barMidOpacity: this.state.menuOpen ? 0 : 1,
+      ratingDisplay: this.state.ratingDisplay,
+      reviewsDisplay: this.state.reviewsDisplay,
+      benefits: this.benefits,
+      aboutHighlights: this.aboutHighlights,
+      services: this.services.map((s) => ({ ...s, photo: s.photo || '' })),
+      structure: this.structure.map((s) => ({ ...s, photo: s.photo || '' })),
+      differentials: this.differentials,
+      testimonials,
+      currentTestimonial: testimonials[this.state.testimonialIndex],
+      beforeAfterPairs: this.beforeAfterPairs,
+      baTransform: `translateX(-${this.state.baIndex * 100}%)`,
+      nextBA: this.nextBA,
+      prevBA: this.prevBA,
+      steps: this.stepsData,
+      faqs,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

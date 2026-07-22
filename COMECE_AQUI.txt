@@ -1,0 +1,235 @@
+═══════════════════════════════════════════════════════════════════════════════
+  🎯 TREND HAIR LANDING PAGE - GUIA RÁPIDO DE PRÉ-ENVIO
+═══════════════════════════════════════════════════════════════════════════════
+
+👋 OI! Aqui está um resumo do que precisa fazer antes de publicar seu site.
+
+═══════════════════════════════════════════════════════════════════════════════
+  🚨 CRÍTICO (Sem essas, o site NÃO funciona)
+═══════════════════════════════════════════════════════════════════════════════
+
+1. COLETA DE IMAGENS (30 MIN) ⏱️
+   ┌─────────────────────────────────────────────────────────────────────────┐
+   │ Você precisa de 26 FOTOS do salão:                                      │
+   │                                                                         │
+   │ ✓ 1 foto hero (1920x1080) - fachada/atendimento geral                 │
+   │ ✓ 10 fotos de serviços (400x220px cada) - corte, coloração, etc        │
+   │ ✓ 6 fotos de estrutura (750x260px) - recepção, salão, jardim, etc      │
+   │ ✓ 6 fotos antes/depois (540x440px) - transformações                    │
+   │ ✓ 1 logo PNG com fundo transparente                                    │
+   │                                                                         │
+   │ AÇÃO: Organizar em PASTA /assets/photos/                              │
+   └─────────────────────────────────────────────────────────────────────────┘
+
+2. ESTRUTURA DE ARQUIVOS (1 MIN) 📁
+   ┌─────────────────────────────────────────────────────────────────────────┐
+   │ Criar essa estrutura:                                                   │
+   │                                                                         │
+   │ public_html/                                                            │
+   │ ├── index.html ................... renomear Trend_Hair.dc.html        │
+   │ ├── support.js ................... já tem                             │
+   │ ├── image-slot.js ................ já tem                             │
+   │ ├── favicon.ico .................. criar depois                       │
+   │ ├── assets/                                                            │
+   │ │   ├── trend-hair-logo.png                                           │
+   │ │   ├── og-image.jpg ............ imagem para redes (1200x630)       │
+   │ │   └── photos/           ← AQUI VÃO TODAS AS 26 FOTOS               │
+   │ └── .imageslots.state.json ....... já tem                             │
+   └─────────────────────────────────────────────────────────────────────────┘
+
+3. VERIFICAR WHATSAPP (2 MIN) ☑️
+   ┌─────────────────────────────────────────────────────────────────────────┐
+   │ Número usado: +55 51 99152-8060                                        │
+   │                                                                         │
+   │ ❌ CONFIRMAR COM CLIENTE:                                              │
+   │    • Este é o número CORRETO?                                          │
+   │    • Está ATIVO?                                                       │
+   │    • Recebe mensagens WhatsApp?                                        │
+   │                                                                         │
+   │ TESTE: Clique no botão "Agendar pelo WhatsApp" em um celular          │
+   │        Deve abrir WhatsApp com mensagem pré-preenchida                 │
+   └─────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+  ⚡ IMPORTANTE (Site funciona mas sem essas fica incompleto)
+═══════════════════════════════════════════════════════════════════════════════
+
+4. CONFIGURAÇÕES SEO (10 MIN)
+   ┌─────────────────────────────────────────────────────────────────────────┐
+   │ Usar o arquivo "index-corrigido.html" que vem com meta tags             │
+   │                                                                         │
+   │ Ele já tem:                                                             │
+   │ ✅ Meta description                                                    │
+   │ ✅ Open Graph (Facebook/Instagram)                                    │
+   │ ✅ Twitter Card                                                        │
+   │ ✅ Canonical URL (mude "seu-dominio.com")                            │
+   │ ✅ Favicon links                                                       │
+   │                                                                         │
+   │ AÇÃO: Encontrar e substituir "seu-dominio.com" por seu domínio real    │
+   └─────────────────────────────────────────────────────────────────────────┘
+
+5. TESTE LOCAL (10 MIN)
+   ┌─────────────────────────────────────────────────────────────────────────┐
+   │ Abrir terminal e rodar:                                                │
+   │                                                                         │
+   │   cd /caminho/do/site                                                  │
+   │   python -m http.server 8000                                           │
+   │                                                                         │
+   │ Depois abrir: http://localhost:8000                                    │
+   │                                                                         │
+   │ TESTAR:                                                                │
+   │ ☐ Imagens carregam?                                                    │
+   │ ☐ Menu mobile funciona?                                               │
+   │ ☐ Links de âncora funcionam?                                          │
+   │ ☐ WhatsApp button abre?                                               │
+   │ ☐ Animações funcionam?                                                │
+   │ ☐ Responsividade mobile?                                              │
+   └─────────────────────────────────────────────────────────────────────────┘
+
+6. LIGHTHOUSE (5 MIN)
+   ┌─────────────────────────────────────────────────────────────────────────┐
+   │ No Chrome DevTools (F12):                                               │
+   │                                                                         │
+   │ 1. Aba "Lighthouse"                                                    │
+   │ 2. Clique "Analyze page load"                                          │
+   │ 3. Esperar resultados                                                  │
+   │                                                                         │
+   │ ESPERADO: Performance > 90, Accessibility > 90, SEO > 90              │
+   │                                                                         │
+   │ Se algum score < 80:                                                   │
+   │ • Comprimir imagens em https://tinypng.com/                            │
+   │ • Usar webp ao invés de jpg                                            │
+   └─────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+  📦 ANTES DE FAZER UPLOAD (CHECKLIST FINAL)
+═══════════════════════════════════════════════════════════════════════════════
+
+ARQUIVOS:
+  ☐ Renomear "Trend_Hair.dc.html" → "index.html"
+  ☐ Usar "index-corrigido.html" (tem meta tags)
+  ☐ Substituir "seu-dominio.com" por domínio real
+  ☐ Adicionar "/" antes de paths (/assets/ ao invés de assets/)
+
+IMAGENS:
+  ☐ Todas 26 fotos em /assets/photos/
+  ☐ Comprimidas (não maiores que 300KB cada)
+  ☐ Em JPG ou WebP
+  ☐ Resoluções corretas
+
+FUNCIONALIDADES:
+  ☐ Menu hamburger mobile abre/fecha
+  ☐ Header fica transparente em topo, branco ao scroll
+  ☐ Botões WhatsApp funcionam em celular
+  ☐ FAQ accordion abre/fecha
+  ☐ Carousel antes/depois funciona
+  ☐ Rating anima de 0 a 4.8
+  ☐ Links de âncora (#inicio, #servicos, etc) funcionam
+
+TESTES:
+  ☐ Testou em desktop (1920px)
+  ☐ Testou em tablet (768px)
+  ☐ Testou em mobile (375px) - PHONE REAL, não emulador
+  ☐ Validou HTML (https://validator.w3.org/)
+  ☐ Testou Lighthouse (> 90 em todas categorias)
+  ☐ Testou WhatsApp em celular real
+
+═══════════════════════════════════════════════════════════════════════════════
+  🚀 UPLOAD PARA HOSTINGER (30 MIN)
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Fazer login na Hostinger
+   https://hpanel.hostinger.com
+
+2. Ir para "File Manager" (Gerenciador de Arquivos)
+
+3. Navegar para "public_html"
+
+4. Fazer upload dos arquivos:
+   • index.html
+   • support.js
+   • image-slot.js
+   • .imageslots.state.json
+   • Pasta "assets/" completa
+
+5. Configurar SSL (HTTPS):
+   • cPanel → SSL/TLS
+   • Auto-Configure com Let's Encrypt
+   • Ativar redirect HTTP → HTTPS
+
+6. Ativar Compressão:
+   • cPanel → Gzip Compression
+   • Marcar .js, .css, .html, .svg
+
+7. Testar:
+   • https://seu-dominio.com
+   • Verificar se carrega corretamente
+
+═══════════════════════════════════════════════════════════════════════════════
+  📊 PÓS-DEPLOY (PRÓXIMOS PASSOS)
+═══════════════════════════════════════════════════════════════════════════════
+
+SEMANA 1:
+  [ ] Submeter ao Google Search Console (https://search.google.com/search-console)
+  [ ] Submeter sitemap.xml
+  [ ] Ativar Google Analytics
+
+SEMANA 2:
+  [ ] Verificar se site aparece no Google
+  [ ] Monitorar Search Console por erros
+  [ ] Testar com UptimeRobot (monitoramento)
+
+MENSALMENTE:
+  [ ] Acompanhar visitantes no Analytics
+  [ ] Verificar velocidade em GTmetrix
+  [ ] Fazer backup do site
+
+═══════════════════════════════════════════════════════════════════════════════
+  📞 DÚVIDAS? LEIA ISSO
+═══════════════════════════════════════════════════════════════════════════════
+
+"As imagens não aparecem no site publicado"
+→ Verificar se os paths estão com "/" no início: /assets/foto.jpg
+
+"WhatsApp não abre no celular"
+→ Testar o link direto: https://wa.me/5551991528060
+→ Verificar se número é válido
+
+"Site está lento"
+→ Comprimir imagens em https://tinypng.com/
+→ Usar WebP ao invés de JPG
+
+"Não sei como criar favicon"
+→ https://favicon.io/ (gera automático)
+→ Salvar como favicon.ico em public_html/
+
+"Preciso mudar logo/cores/texto depois"
+→ Pode editar index.html no File Manager
+→ Mas é melhor ter uma cópia local e fazer upload
+
+═══════════════════════════════════════════════════════════════════════════════
+  ✅ PRÓXIMOS PASSOS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Reunir as 26 fotos do salão (HOJE)
+2. Organizar em pasta /assets/photos/
+3. Confirmar número WhatsApp com cliente
+4. Usar "index-corrigido.html" e substituir domínio
+5. Testar localmente com "python -m http.server 8000"
+6. Fazer upload para Hostinger
+7. Testar no domínio publicado
+8. Mostrar para cliente
+
+TEMPO TOTAL: ~3-4 horas
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Leia os arquivos criados para você:
+  • CHECKLIST_PRE_ENVIO.md ........... Checklist detalhado
+  • GUIA_DEPLOY_HOSTINGER.md ........ Guia passo-a-passo
+  • PROBLEMAS_ENCONTRADOS.md ....... Problemas específicos
+  • index-corrigido.html ............ HTML pronto para usar
+
+═══════════════════════════════════════════════════════════════════════════════
+BOA SORTE! 🚀
+═══════════════════════════════════════════════════════════════════════════════
