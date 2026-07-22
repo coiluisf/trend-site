@@ -1508,7 +1508,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: clamp(32px, 6vw, 80px);
+      gap: clamp(32px, 5vw, 60px);
     }
 
     .about-image {
@@ -1739,7 +1739,7 @@
       background: #F7F7F7;
       display: flex;
       flex-direction: column;
-      gap: clamp(32px, 6vw, 80px);
+      gap: clamp(32px, 5vw, 60px);
       align-items: flex-start;
     }
 
@@ -1783,6 +1783,7 @@
     /* Testimonials Section */
     .testimonials-section {
       padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+      background: #ffffff;
     }
 
     .testimonials-wrapper {
@@ -1790,7 +1791,7 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: clamp(32px, 6vw, 80px);
+      gap: clamp(32px, 5vw, 60px);
       align-items: center;
     }
 
@@ -1828,14 +1829,14 @@
     }
 
     .testimonial-text {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: clamp(24px, 2.8vw, 32px) !important;
-      line-height: 1.6 !important;
-      margin: 0 0 24px !important;
-      max-width: 32ch !important;
-      color: #111111 !important;
-      font-weight: 500 !important;
+      font-family: 'Playfair Display', serif !important;
+      font-style: italic !important;
+      font-size: clamp(28px, 3.2vw, 36px) !important;
+      line-height: 1.7 !important;
+      margin: 0 0 28px !important;
+      max-width: 35ch !important;
+      color: #000000 !important;
+      font-weight: 600 !important;
     }
 
     .testimonial-dots {
@@ -1876,7 +1877,7 @@
     /* How It Works Section */
     .how-section {
       padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
-      background: #111111;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
       color: #ffffff;
     }
 
@@ -1900,31 +1901,35 @@
     }
 
     .step {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 20px !important;
     }
 
     .step-number {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      border: 1px solid #C7A46A;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      color: #C7A46A;
+      width: 64px !important;
+      height: 64px !important;
+      border-radius: 50% !important;
+      border: 2px solid #C7A46A !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-family: 'Playfair Display', serif !important;
+      font-size: 28px !important;
+      color: #C7A46A !important;
+      font-weight: 700 !important;
     }
 
     .step-text {
-      font-size: 15px;
-      line-height: 1.5;
-      margin: 0;
-      max-width: 18ch;
+      font-size: 18px !important;
+      line-height: 1.7 !important;
+      margin: 0 !important;
+      max-width: 20ch !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.5px !important;
     }
 
     @media (min-width: 1024px) {
