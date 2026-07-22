@@ -2669,96 +2669,17 @@
       }
     }
 
-    /* PROBLEMA 7: Rodapé - Premium Styling */
-    footer,
-    div[style*="padding:60px 40px"],
-    section[style*="background:#111111"] {
+    /* PROBLEMA 7: Rodapé - Premium Refinement (mantendo responsividade original) */
+    footer {
       background: linear-gradient(180deg, #111111 0%, #1a1a1a 100%) !important;
-      color: #ffffff !important;
-      padding: 3rem 1.5rem 1.5rem !important;
-      border-top: 1px solid rgba(199, 164, 106, 0.2) !important;
     }
 
-    footer div {
-      max-width: 100% !important;
-      width: 100% !important;
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 2rem !important;
-      align-items: start !important;
-    }
-
-    footer section,
-    div[style*="flex:1"] {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 1rem !important;
-      align-items: flex-start !important;
-    }
-
-    footer h3,
-    footer h4,
-    div[style*="margin-bottom:24px"] {
-      font-size: 0.95rem !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.1em !important;
-      text-transform: uppercase !important;
+    footer h3 {
       color: #C7A46A !important;
-      margin-bottom: 1rem !important;
-      margin-top: 0 !important;
-    }
-
-    footer p,
-    footer a,
-    footer span {
-      font-size: 0.875rem !important;
-      line-height: 1.6 !important;
-      color: #cccccc !important;
-      text-decoration: none !important;
-      transition: color 0.2s ease !important;
     }
 
     footer a:hover {
       color: #C7A46A !important;
-    }
-
-    hr,
-    div[style*="border-bottom"] {
-      border: none !important;
-      border-top: 1px solid rgba(199, 164, 106, 0.2) !important;
-      margin: 2rem 0 !important;
-    }
-
-    div[style*="text-align:center"],
-    footer > p:last-child {
-      grid-column: 1 / -1 !important;
-      text-align: center !important;
-      font-size: 0.8125rem !important;
-      color: #999999 !important;
-      padding-top: 1.5rem !important;
-      border-top: 1px solid rgba(199, 164, 106, 0.2) !important;
-      margin-top: 1.5rem !important;
-    }
-
-    @media (max-width: 768px) {
-      footer,
-      div[style*="padding:60px 40px"] {
-        padding: 2rem 1.25rem !important;
-      }
-
-      footer div {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-      }
-
-      footer section {
-        border-bottom: 1px solid rgba(199, 164, 106, 0.2) !important;
-        padding-bottom: 1.5rem !important;
-      }
-
-      footer section:last-of-type {
-        border-bottom: none !important;
-      }
     }
 
     @media (prefers-color-scheme: dark) {
