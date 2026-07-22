@@ -1,0 +1,3135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Trend Hair - Salão de beleza premium em Porto Alegre. Conheça nossos serviços de corte, coloração, penteados e muito mais.">
+  <meta name="keywords" content="salão, beleza, cabelo, Porto Alegre, estética">
+  <meta property="og:title" content="Trend Hair - Salão de Beleza Premium">
+  <meta property="og:description" content="Salão de beleza premium em Porto Alegre com atendimento personalizado">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#C7A46A">
+  <title>Trend Hair - Salão de Beleza Premium em Porto Alegre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --header-height-mobile: 64px;
+      --header-height-desktop: 76px;
+      --color-primary: #111111;
+      --color-accent: #C7A46A;
+      --color-light: #F7F7F7;
+      --color-border: #D9D9D9;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+      line-height: 1.6;
+    }
+
+    body, p, span {
+      line-height: 1.6;
+    }
+
+    a {
+      color: #111111;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover { color: #C7A46A; }
+
+    @media (max-width: 768px) {
+      a[style*="background:#"],
+      button {
+        min-height: 44px !important;
+        min-width: 44px !important;
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.9375rem !important;
+      }
+
+      div[style*="gap:16px"] {
+        gap: 12px !important;
+        flex-direction: column !important;
+      }
+
+      div[style*="gap:16px"] a {
+        width: 100% !important;
+        text-align: center !important;
+      }
+    }
+
+    ::selection { background: #C7A46A; color: #ffffff; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+
+    /* Safe areas para notch do iPhone */
+    @supports (padding: max(0px)) {
+      body {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+      }
+
+      header {
+        padding-top: max(0, env(safe-area-inset-top));
+      }
+
+      footer {
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+      }
+    }
+
+    @supports not (padding: max(0px)) {
+      body {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
+    /* Tipografia responsiva */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: clamp(1.5rem, 5vw, 2.2rem) !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1rem !important;
+      }
+
+      h2 {
+        font-size: clamp(1.25rem, 4vw, 1.75rem) !important;
+        line-height: 1.3 !important;
+      }
+
+      h3 {
+        font-size: clamp(1rem, 3vw, 1.25rem) !important;
+        line-height: 1.3 !important;
+      }
+
+      p {
+        font-size: 0.9375rem !important;
+        line-height: 1.6 !important;
+      }
+
+      a {
+        font-size: inherit !important;
+      }
+
+      button {
+        font-size: 0.9375rem !important;
+        padding: 0.75rem 1.5rem !important;
+      }
+    }
+
+    /* Espaçamento responsivo */
+    @media (max-width: 768px) {
+      section {
+        padding: 2rem 1.25rem !important;
+      }
+
+      section + section {
+        margin-top: 0 !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding: 1.5rem 1rem !important;
+      }
+    }
+
+    /* Containers responsivos */
+    @media (max-width: 768px) {
+      div[style*="max-width:1320px"],
+      div[style*="max-width:1400px"] {
+        padding: 0 1.25rem !important;
+      }
+    }
+
+    /* PROMPT 2 - Layouts Grid/Flex Responsivos */
+
+    /* Benefícios - Grid 4→2→1 */
+    @media (max-width: 768px) {
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1px !important;
+      }
+
+      .benefit-grid > div {
+        padding: 1.5rem !important;
+      }
+
+      .benefit-grid > div h3,
+      .benefit-grid > div p {
+        font-size: 0.9375rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .benefit-grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+      }
+    }
+
+    /* Seções Flex - 2 colunas → Stack Vertical */
+    @media (max-width: 768px) {
+      div[style*="display:flex"][style*="gap:40px"] {
+        flex-direction: column !important;
+        gap: 2rem !important;
+      }
+
+      div[style*="flex:1 1 45%"],
+      div[style*="flex:1 1 50%"],
+      div[style*="flex:1 1 55%"],
+      div[style*="flex:1 1 60%"] {
+        flex: 1 1 100% !important;
+      }
+    }
+
+    /* Serviços - Grid 3→2→1 */
+    @media (max-width: 1024px) {
+      div[style*="grid-template-columns:repeat(3"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      div[style*="grid-template-columns:repeat(2"],
+      div[style*="grid-template-columns:repeat(3"] {
+        grid-template-columns: repeat(1, 1fr) !important;
+      }
+
+      .service-card {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      div[style*="grid"] img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 250px !important;
+        object-fit: cover !important;
+      }
+    }
+
+    /* Estrutura - Cards Grid Responsivo */
+    @media (max-width: 768px) {
+      div[style*="display:grid"] {
+        gap: 1.5rem !important;
+      }
+    }
+
+    /* Diferenciais - 2→1 coluna */
+    @media (max-width: 768px) {
+      div[style*="grid-template-columns:repeat(2"] {
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 1.5rem !important;
+      }
+    }
+
+    div[style*="display:flex"][style*="align-items:center"][style*="gap:"] {
+      gap: 1rem !important;
+    }
+
+    div[style*="display:flex"][style*="align-items:center"] span {
+      font-size: 0.9375rem !important;
+    }
+
+    /* Depoimentos - Flex Responsivo */
+    @media (max-width: 768px) {
+      div[style*="display:flex"][style*="gap:28px"] {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+      }
+
+      div[style*="flex:1"] {
+        flex: 1 1 100% !important;
+      }
+    }
+
+    div[style*="font-style:italic"] {
+      font-size: 1rem !important;
+      line-height: 1.6 !important;
+    }
+
+    div[style*="display:flex"][style*="gap:8px"] {
+      gap: 0.5rem !important;
+      justify-content: center !important;
+    }
+
+    /* Antes/Depois - Carousel Mobile */
+    @media (max-width: 768px) {
+      div[style*="display:flex"] img[style*="width:100%"] {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 400px !important;
+        object-fit: cover !important;
+      }
+
+      div[style*="transform:translateX"] {
+        width: 100% !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      button[style*="width:48px"] {
+        width: 40px !important;
+        height: 40px !important;
+      }
+    }
+
+    /* Passos - Timeline Responsivo */
+    @media (max-width: 768px) {
+      div[style*="display:flex"][style*="gap:16px"] {
+        flex-wrap: wrap !important;
+        gap: 1rem !important;
+      }
+    }
+
+    div[style*="flex:1"] {
+      min-width: 0 !important;
+    }
+
+    span[style*="font-size:32px"],
+    span[style*="font-size:40px"] {
+      font-size: 1.5rem !important;
+    }
+
+    span[style*="font-size:16px"] {
+      font-size: 0.9375rem !important;
+    }
+
+    /* FAQ - Accordion Responsivo */
+    @media (max-width: 768px) {
+      div[style*="flex-direction:column"][style*="gap:12px"] {
+        gap: 1rem !important;
+      }
+    }
+
+    div[style*="border-bottom:1px solid"] {
+      padding: 1.25rem 0 !important;
+    }
+
+    div[style*="display:flex"][style*="justify-content:space-between"] {
+      gap: 1rem !important;
+    }
+
+    div[style*="font-size:16px"] {
+      font-size: 0.9375rem !important;
+    }
+
+    /* Imagens Responsivas */
+    img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      display: block !important;
+    }
+
+    @media (max-width: 768px) {
+      div[style*="position:absolute"] img {
+        object-fit: cover !important;
+      }
+
+      div[style*="flex:1 1 50%"] img {
+        max-height: 300px !important;
+      }
+    }
+
+    /* Overflow e Ajustes Gerais */
+    body {
+      overflow-x: hidden !important;
+    }
+
+    /* Flex containers em mobile */
+    @media (max-width: 768px) {
+      div[style*="display:flex"] {
+        flex-wrap: wrap !important;
+      }
+
+      div[style*="flex:1"],
+      div[style*="flex:0"] {
+        min-width: 0 !important;
+      }
+    }
+
+    /* Texto Responsivo em Containers */
+    @media (max-width: 768px) {
+      h3 {
+        font-size: 1.125rem !important;
+      }
+
+      h2 {
+        font-size: 1.375rem !important;
+      }
+
+      p {
+        font-size: 0.9375rem !important;
+        margin-bottom: 1rem !important;
+      }
+    }
+
+
+    /* Links da nav desktop */
+    .desktop-nav a {
+      font-size: 0.875rem !important;
+      letter-spacing: 0.03em !important;
+      font-weight: 500 !important;
+      transition: color 0.2s ease !important;
+    }
+
+    .desktop-nav a:hover {
+      color: #C7A46A !important;
+    }
+
+    /* Acessibilidade - Focus States */
+    .hamburger-btn:focus-visible {
+      outline: 2px solid #0066cc;
+      outline-offset: 2px;
+    }
+
+    .cta-button:focus-visible {
+      outline: 2px solid #0066cc;
+      outline-offset: 2px;
+    }
+
+    /* Prevenir scroll quando menu aberto */
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    /* PROMPT 4 - Botões e Elementos Interativos Responsivos */
+
+    /* Padrão Global - Todos os Botões e Links */
+    a, button {
+      cursor: pointer !important;
+      user-select: none !important;
+      -webkit-user-select: none !important;
+      -webkit-tap-highlight-color: transparent !important;
+      transition: all 0.2s ease !important;
+      -webkit-touch-callout: none !important;
+    }
+
+    /* Hit area mínima: 44×44px */
+    a[role="button"],
+    button,
+    input[type="button"],
+    input[type="submit"] {
+      min-height: 44px !important;
+      min-width: 44px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      position: relative !important;
+    }
+
+    /* Links devem ter padding para hit area */
+    a:not([role="button"]) {
+      padding: 0.5rem 0.25rem !important;
+      position: relative !important;
+    }
+
+    /* Botão "Agendar" no Header - Desktop */
+    @media (min-width: 769px) {
+      a[style*="background:#C7A46A"][style*="padding:12px"],
+      a[style*="background:#C7A46A"] {
+        background: #C7A46A !important;
+        color: #111111 !important;
+        padding: 12px 26px !important;
+        border-radius: 999px !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.03em !important;
+        white-space: nowrap !important;
+        min-height: 44px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      }
+
+      a[style*="background:#C7A46A"]:hover {
+        background: #b8925a !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 10px 24px rgba(199, 164, 106, 0.35) !important;
+      }
+
+      a[style*="background:#C7A46A"]:active {
+        transform: translateY(0px) !important;
+        box-shadow: 0 4px 12px rgba(199, 164, 106, 0.2) !important;
+      }
+
+      a[style*="background:#C7A46A"]:focus {
+        outline: 2px solid #0066cc !important;
+        outline-offset: 2px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      a[style*="background:#C7A46A"][class*="hide-mobile"] {
+        display: none !important;
+      }
+    }
+
+    /* Botões Hero - Primário (Fundo escuro) */
+    a[style*="background:#111111"][style*="padding:17px"],
+    a[style*="background:#111111"] {
+      background: #111111 !important;
+      color: #ffffff !important;
+      padding: 17px 32px !important;
+      border-radius: 999px !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      min-height: 44px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      border: none !important;
+      white-space: nowrap !important;
+    }
+
+    a[style*="background:#111111"]:hover {
+      background: #C7A46A !important;
+      color: #111111 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 10px 24px rgba(199, 164, 106, 0.2) !important;
+    }
+
+    a[style*="background:#111111"]:active {
+      transform: translateY(0px) !important;
+      box-shadow: 0 4px 12px rgba(199, 164, 106, 0.1) !important;
+    }
+
+    a[style*="background:#111111"]:focus {
+      outline: 2px solid #0066cc !important;
+      outline-offset: 2px !important;
+    }
+
+    /* Botões Hero - Secundário (Borda) */
+    a[style*="border:1px solid #D9D9D9"] {
+      border: 1px solid #D9D9D9 !important;
+      background: transparent !important;
+      color: #111111 !important;
+      padding: 17px 32px !important;
+      border-radius: 999px !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      min-height: 44px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      white-space: nowrap !important;
+    }
+
+    a[style*="border:1px solid #D9D9D9"]:hover {
+      border-color: #111111 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    a[style*="border:1px solid #D9D9D9"]:active {
+      transform: translateY(0px) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    a[style*="border:1px solid #D9D9D9"]:focus {
+      outline: 2px solid #0066cc !important;
+      outline-offset: 2px !important;
+    }
+
+    /* Botões em coluna mobile */
+    @media (max-width: 768px) {
+      div[style*="display:flex"][style*="gap:16px"] {
+        flex-direction: column !important;
+        gap: 12px !important;
+      }
+
+      div[style*="display:flex"][style*="gap:16px"] a {
+        width: 100% !important;
+        text-align: center !important;
+      }
+    }
+
+    /* Botão no Menu Modal */
+    div[style*="position:fixed"][style*="inset:0"] a[style*="background:#C7A46A"] {
+      background: #C7A46A !important;
+      color: #111111 !important;
+      padding: 16px 40px !important;
+      border-radius: 999px !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      min-height: 44px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.2s ease !important;
+      border: none !important;
+      white-space: nowrap !important;
+    }
+
+    div[style*="position:fixed"][style*="inset:0"] a[style*="background:#C7A46A"]:active {
+      transform: scale(0.98) !important;
+      box-shadow: 0 4px 12px rgba(199, 164, 106, 0.2) !important;
+    }
+
+    div[style*="position:fixed"][style*="inset:0"] a[style*="background:#C7A46A"]:focus {
+      outline: 2px solid #0066cc !important;
+      outline-offset: 2px !important;
+    }
+
+    /* Botões do Carrossel Antes/Depois */
+    button[style*="width:48px"],
+    button[style*="width:40px"] {
+      width: 48px !important;
+      height: 48px !important;
+      min-width: 48px !important;
+      min-height: 48px !important;
+      padding: 0 !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      background: rgba(0, 0, 0, 0.3) !important;
+      color: #ffffff !important;
+      border-radius: 50% !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.2s ease !important;
+      font-size: 20px !important;
+      font-weight: 600 !important;
+    }
+
+    button[style*="width:48px"]:hover {
+      background: rgba(0, 0, 0, 0.5) !important;
+      border-color: rgba(255, 255, 255, 0.6) !important;
+      transform: scale(1.05) !important;
+    }
+
+    button[style*="width:48px"]:active {
+      transform: scale(0.95) !important;
+      background: rgba(0, 0, 0, 0.6) !important;
+    }
+
+    button[style*="width:48px"]:focus {
+      outline: 2px solid #0066cc !important;
+      outline-offset: 2px !important;
+    }
+
+    @media (max-width: 768px) {
+      button[style*="width:48px"] {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        min-height: 40px !important;
+        font-size: 16px !important;
+      }
+    }
+
+    /* Botões do FAQ */
+    div[style*="display:flex"][style*="justify-content:space-between"] button,
+    button[style*="background:none"] {
+      width: auto !important;
+      min-width: 44px !important;
+      min-height: 44px !important;
+      padding: 0.5rem !important;
+      background: none !important;
+      border: none !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.2s ease !important;
+    }
+
+    button[style*="background:none"] span {
+      width: 24px !important;
+      height: 24px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 18px !important;
+      color: #C7A46A !important;
+      transition: transform 0.3s ease !important;
+    }
+
+    button[style*="background:none"]:hover span {
+      transform: rotate(45deg) !important;
+      color: #b8925a !important;
+    }
+
+    button[style*="background:none"]:active {
+      transform: scale(0.95) !important;
+    }
+
+    button[style*="background:none"]:focus {
+      outline: 2px solid #0066cc !important;
+      outline-offset: 2px !important;
+    }
+
+    /* Links de Navegação */
+    .desktop-nav a,
+    nav a,
+    a[style*="letter-spacing:0.03em"] {
+      padding: 0.5rem 0.75rem !important;
+      position: relative !important;
+      font-size: 0.875rem !important;
+      letter-spacing: 0.03em !important;
+      font-weight: 500 !important;
+      transition: color 0.2s ease !important;
+      color: #111111 !important;
+    }
+
+    .desktop-nav a::after,
+    nav a::after {
+      content: '' !important;
+      position: absolute !important;
+      bottom: 0 !important;
+      left: 0.75rem !important;
+      width: 0 !important;
+      height: 2px !important;
+      background: #C7A46A !important;
+      transition: width 0.3s ease !important;
+    }
+
+    .desktop-nav a:hover::after,
+    nav a:hover::after {
+      width: calc(100% - 1.5rem) !important;
+    }
+
+    .desktop-nav a:active {
+      color: #C7A46A !important;
+    }
+
+    .desktop-nav a:focus {
+      outline: 2px solid #0066cc !important;
+      outline-offset: 4px !important;
+    }
+
+    /* Menu links */
+    div[style*="position:fixed"][style*="inset:0"] a {
+      padding: 1rem 0 !important;
+      border-bottom: 1px solid rgba(217, 217, 217, 0.2) !important;
+    }
+
+    div[style*="position:fixed"][style*="inset:0"] a:last-child {
+      border-bottom: none !important;
+    }
+
+    /* Espaçamento entre elementos clicáveis */
+    @media (max-width: 768px) {
+      a + a,
+      button + button,
+      a + button,
+      button + a {
+        margin-left: 0.5rem !important;
+      }
+
+      div[style*="flex-direction:column"] a,
+      div[style*="flex-direction:column"] button {
+        margin-bottom: 0.5rem !important;
+      }
+    }
+
+    /* Gap em containers */
+    div[style*="display:flex"][style*="gap:16px"],
+    div[style*="display:flex"][style*="gap:20px"] {
+      gap: 1rem !important;
+    }
+
+    /* Botões Desabilitados */
+    button:disabled,
+    a[aria-disabled="true"],
+    button[disabled] {
+      opacity: 0.6 !important;
+      cursor: not-allowed !important;
+      pointer-events: none !important;
+    }
+
+    button:disabled:hover {
+      background: inherit !important;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Ícones em Botões */
+    button svg,
+    a svg {
+      width: 20px !important;
+      height: 20px !important;
+      display: inline-block !important;
+      margin-right: 0.5rem !important;
+      transition: all 0.2s ease !important;
+    }
+
+    button:hover svg,
+    a:hover svg {
+      transform: translateY(-2px) !important;
+    }
+
+    /* Visual Feedback - Ripple Effect */
+    @media (max-width: 768px) {
+      a, button {
+        position: relative !important;
+        overflow: hidden !important;
+      }
+
+      a::before,
+      button::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        width: 0 !important;
+        height: 0 !important;
+        border-radius: 50% !important;
+        background: rgba(199, 164, 106, 0.2) !important;
+        transform: translate(-50%, -50%) !important;
+        pointer-events: none !important;
+      }
+
+      a:active::before,
+      button:active::before {
+        animation: ripple 0.6s ease-out !important;
+      }
+    }
+
+    @keyframes ripple {
+      to {
+        width: 300px !important;
+        height: 300px !important;
+        opacity: 0 !important;
+      }
+    }
+
+    /* Acessibilidade - Focus States Completo */
+    :focus-visible {
+      outline: 2px solid #0066cc !important;
+      outline-offset: 2px !important;
+    }
+
+    :focus:not(:focus-visible) {
+      outline: none !important;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :focus-visible {
+        outline-color: #66b3ff !important;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      a, button {
+        transition: none !important;
+      }
+
+      a::after,
+      button::after {
+        transition: none !important;
+      }
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(217, 217, 217, 0);
+      transition: background 0.4s ease, border-color 0.4s ease;
+      padding-left: max(1rem, env(safe-area-inset-left));
+      padding-right: max(1rem, env(safe-area-inset-right));
+    }
+
+    header.scrolled {
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom-color: var(--color-border);
+    }
+
+    .header-inner {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px;
+      height: auto;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--header-height-desktop);
+      width: 100%;
+    }
+
+    .header-bottom {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0 16px 0;
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        padding: 0 20px;
+      }
+
+      .header-top {
+        height: var(--header-height-mobile);
+      }
+
+      .header-bottom {
+        display: flex;
+      }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(1) contrast(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .logo img {
+        height: 24px;
+      }
+    }
+
+    nav {
+      display: none;
+      align-items: center;
+      gap: 40px;
+    }
+
+    nav.desktop-nav {
+      display: flex;
+    }
+
+    nav a {
+      font-size: 14px;
+      letter-spacing: 0.03em;
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      nav, .desktop-nav {
+        display: none !important;
+      }
+    }
+
+    .cta-button {
+      background: var(--color-accent);
+      color: var(--color-primary);
+      padding: 14px 28px;
+      border-radius: 16px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      transition: all 0.25s ease;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background: #b8925a;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(199, 164, 106, 0.35);
+    }
+
+    .cta-button:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .cta-button {
+        width: 100%;
+        max-width: 320px;
+        padding: 12px 24px;
+        font-size: 14px;
+      }
+    }
+
+    .hamburger-btn {
+      position: relative;
+      display: none;
+      width: 48px;
+      height: 48px;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger-btn {
+        display: flex !important;
+      }
+    }
+
+    .hamburger-btn span {
+      position: absolute;
+      width: 28px;
+      height: 2px;
+      background: var(--color-primary);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 1px;
+    }
+
+    .hamburger-btn span:nth-child(1) { top: 14px; }
+    .hamburger-btn span:nth-child(2) { top: 24px; }
+    .hamburger-btn span:nth-child(3) { top: 34px; }
+
+    .hamburger-btn.active span:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+
+    .hamburger-btn.active span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+
+    .hamburger-btn.active span:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      top: calc(var(--header-height-mobile) + 80px);
+      left: 0;
+      right: 0;
+      z-index: 45;
+      background: #ffffff;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0;
+      padding: 0;
+      max-height: calc(100dvh - var(--header-height-mobile) - 80px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--color-primary);
+      padding: 20px;
+      border-bottom: 1px solid rgba(217, 217, 217, 0.15);
+      text-align: center;
+      width: 100%;
+      display: block;
+    }
+
+    .mobile-menu a:last-of-type {
+      border-bottom: none;
+    }
+
+    .mobile-menu .cta-button {
+      display: inline-flex;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border: none;
+      padding: 12px 24px;
+    }
+
+    @media (min-width: 769px) {
+      .mobile-menu {
+        display: none !important;
+      }
+      nav.desktop-nav {
+        display: flex !important;
+      }
+      .hamburger-btn {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .mobile-menu a {
+        font-size: 20px;
+        padding: 16px;
+      }
+    }
+
+    /* Main Container */
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      font-family: 'Inter', sans-serif;
+      color: #111111;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      min-height: auto;
+      padding-top: calc(var(--header-height-desktop) + 24px);
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding-top: calc(var(--header-height-mobile) + 80px + 24px);
+      }
+    }
+
+    .hero-copy {
+      flex: 1 1 50%;
+      min-width: 0;
+      padding: 0 24px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 28px;
+      order: 1;
+    }
+
+    @media (max-width: 480px) {
+      .hero-copy {
+        padding: 0 20px 32px;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .hero-copy {
+        padding-bottom: 0;
+      }
+    }
+
+    .hero-copy h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(34px, 4.4vw, 58px);
+      line-height: 1.12;
+      margin: 0 0 22px;
+      max-width: 14ch;
+    }
+
+    .hero-copy > div:first-child { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .hero-copy .buttons { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; }
+    .hero-copy .rating { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both; }
+
+    .tagline {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #C7A46A;
+      font-weight: 600;
+      margin: 0 0 18px;
+    }
+
+    .hero-copy p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #4a4a4a;
+      max-width: 46ch;
+      margin: 0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary, .btn-secondary {
+      padding: 17px 32px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: #C7A46A;
+      color: #111111;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 2px solid #C7A46A !important;
+      color: #111111 !important;
+      background: rgba(199, 164, 106, 0.1) !important;
+      padding: 0.875rem 1.75rem !important;
+      min-height: 48px !important;
+      font-weight: 600 !important;
+    }
+
+    .btn-secondary:hover {
+      border-color: #C7A46A !important;
+      background: rgba(199, 164, 106, 0.2) !important;
+      transform: translateY(-2px) !important;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .stars {
+      color: #C7A46A;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .rating-text {
+      font-size: 15px;
+      color: #111111;
+      font-weight: 600;
+    }
+
+    .divider {
+      width: 1px;
+      height: 16px;
+      background: #D9D9D9;
+    }
+
+    .reviews-count {
+      font-size: 15px;
+      color: #4a4a4a;
+    }
+
+    .hero-image {
+      flex: none;
+      min-width: 0;
+      position: relative;
+      width: 100%;
+      height: 360px;
+      order: -1;
+    }
+
+    .hero-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 480px) {
+      .hero-image {
+        height: 320px;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .hero-section {
+        flex-direction: row;
+        min-height: 100dvh;
+        padding-top: var(--header-height-desktop);
+      }
+      .hero-copy { padding: 0 min(6vw, 72px); order: 0; }
+      .hero-image { order: 0; flex: 1 1 50%; width: auto; height: auto; }
+    }
+
+    /* Benefits Section */
+    .benefits-section {
+      padding: clamp(48px, 8vw, 80px) clamp(20px, 5vw, 40px);
+      background: #F7F7F7;
+    }
+
+    .benefits-grid {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: #D9D9D9;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .benefit-item {
+      background: #ffffff;
+      padding: 40px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .benefit-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid #C7A46A;
+    }
+
+    .benefit-item p {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      margin: 0;
+    }
+
+    @media (min-width: 640px) {
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .benefits-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    /* About Section */
+    .about-section {
+      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(32px, 5vw, 60px);
+    }
+
+    .about-image {
+      flex: 1 1 55%;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+      border: none !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .about-content {
+      flex: 1 1 45%;
+      min-width: 0;
+    }
+
+    .about-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.2;
+      margin: 0 0 24px;
+    }
+
+    .about-content p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #4a4a4a;
+      margin: 0 0 20px;
+    }
+
+    .highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .highlight {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .highlight-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #C7A46A;
+      flex: none;
+    }
+
+    .highlight-text {
+      font-size: 15px;
+      color: #111111;
+    }
+
+    @media (min-width: 900px) {
+      .about-section { flex-direction: row; }
+    }
+
+    /* Services Section */
+    .services-section {
+      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+    }
+
+    .section-header {
+      max-width: 1320px;
+      margin: 0 auto 56px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(28px, 3vw, 40px);
+      margin: 0;
+      max-width: 100%;
+      line-height: 1.2;
+    }
+
+    .services-grid {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .service-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #F7F7F7;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(17, 17, 17, 0.08);
+    }
+
+    .service-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-info {
+      padding: 20px 22px 24px;
+    }
+
+    .service-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    @media (min-width: 640px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    /* Before/After Section */
+    .before-after-section {
+      padding: clamp(56px, 9vw, 100px) clamp(20px, 5vw, 40px);
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .ba-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 56px;
+    }
+
+    .ba-header .tagline { color: #C7A46A; }
+    .ba-header h2 { color: #ffffff; }
+
+    .ba-carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .ba-carousel {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .ba-pair {
+      flex: 0 0 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .ba-image-wrapper {
+      position: relative;
+    }
+
+    .ba-image {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .ba-label {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ba-label.before {
+      background: rgba(17, 17, 17, 0.55);
+      color: #fff;
+    }
+
+    .ba-label.after {
+      background: rgba(199, 164, 106, 0.95);
+      color: #111111;
+      font-weight: 600;
+    }
+
+    .ba-controls {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .ba-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      transition: border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .ba-btn:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Differentials Section */
+    .differentials-section {
+      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+      background: #F7F7F7;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(32px, 5vw, 60px);
+      align-items: flex-start;
+    }
+
+    .diff-title { flex: 1 1 40%; min-width: 0; position: static; }
+    .diff-title h2 { max-width: 12ch; }
+
+    .diff-grid {
+      flex: 1 1 60%;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px 40px;
+    }
+
+    .diff-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid #D9D9D9;
+    }
+
+    .diff-check {
+      color: #C7A46A;
+      font-size: 16px;
+    }
+
+    .diff-text {
+      font-size: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .diff-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 900px) {
+      .differentials-section { flex-direction: row; }
+      .diff-title { position: sticky; top: 120px; }
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+      background: #ffffff;
+    }
+
+    .testimonials-wrapper {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(32px, 5vw, 60px);
+      align-items: center;
+    }
+
+    .testimonial-header {
+      flex: none;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #D9D9D9;
+      padding-bottom: 40px;
+    }
+
+    .testimonial-rating {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .testimonial-stars {
+      color: #C7A46A;
+      font-size: 20px;
+      letter-spacing: 3px;
+      margin: 14px 0;
+    }
+
+    .testimonial-count {
+      font-size: 15px;
+      color: #4a4a4a;
+      margin: 0;
+    }
+
+    .testimonial-content {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .testimonial-text {
+      font-family: 'Playfair Display', serif !important;
+      font-style: italic !important;
+      font-size: clamp(28px, 3.2vw, 36px) !important;
+      line-height: 1.7 !important;
+      margin: 0 0 28px !important;
+      max-width: 35ch !important;
+      color: #000000 !important;
+      font-weight: 600 !important;
+    }
+
+    .testimonial-dots {
+      display: flex;
+      gap: 10px;
+      margin-top: 40px;
+    }
+
+    .dot-button {
+      padding: 18px 6px;
+      margin: -18px -6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .dot {
+      height: 8px;
+      border-radius: 999px;
+      background: #D9D9D9;
+      transition: width 0.3s ease, background 0.3s ease;
+      width: 8px;
+      display: block;
+    }
+
+    .dot-button.active .dot {
+      width: 28px;
+      background: #C7A46A;
+    }
+
+    @media (min-width: 900px) {
+      .testimonials-wrapper { flex-direction: row; }
+      .testimonial-header { flex: 0 0 280px; width: auto; border-right: 1px solid #D9D9D9; border-bottom: none; padding-right: 60px; padding-bottom: 0; }
+    }
+
+    /* How It Works Section */
+    .how-section {
+      padding: clamp(48px, 8vw, 80px) clamp(20px, 5vw, 40px) !important;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+      color: #ffffff !important;
+    }
+
+    .how-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .how-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 56px;
+    }
+
+    .how-header .tagline { color: #C7A46A; }
+
+    .how-grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 28px !important;
+    }
+
+    @media (min-width: 640px) {
+      .how-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+
+    .step {
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 20px !important;
+    }
+
+    .step-number {
+      width: 64px !important;
+      height: 64px !important;
+      border-radius: 50% !important;
+      border: 2px solid #C7A46A !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-family: 'Playfair Display', serif !important;
+      font-size: 28px !important;
+      color: #C7A46A !important;
+      font-weight: 700 !important;
+    }
+
+    .step-text {
+      font-size: 18px !important;
+      line-height: 1.7 !important;
+      margin: 0 !important;
+      max-width: 20ch !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.5px !important;
+    }
+
+    @media (min-width: 1024px) {
+      .how-grid { grid-template-columns: repeat(4, 1fr) !important; }
+    }
+
+    @media (max-width: 480px) {
+      .how-section { padding: 2rem 1rem !important; }
+      .how-grid { gap: 1.5rem !important; }
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: clamp(72px, 12vw, 140px) clamp(20px, 5vw, 40px);
+      text-align: center;
+      background: #F7F7F7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(32px, 4vw, 52px);
+      margin: 0 0 22px;
+      line-height: 1.15;
+    }
+
+    .cta-section p {
+      font-size: 17px;
+      color: #4a4a4a;
+      margin: 0 0 40px;
+    }
+
+    .cta-button-large {
+      display: inline-block;
+      background: #C7A46A;
+      color: #111111;
+      padding: 20px 48px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .cta-button-large:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(199, 164, 106, 0.4);
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+    }
+
+    .faq-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .faq-items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #D9D9D9;
+    }
+
+    .faq-button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 26px 4px;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: #111111;
+    }
+
+    .faq-icon {
+      font-size: 20px;
+      color: #C7A46A;
+      transition: transform 0.3s ease;
+      flex: none;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-answer.open {
+      max-height: 320px;
+    }
+
+    .faq-answer p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #4a4a4a;
+      margin: 0 0 26px;
+      padding: 0 4px;
+      max-width: 65ch;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+      background: #F7F7F7;
+    }
+
+    .contact-wrapper {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 56px;
+    }
+
+    .map-container {
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 420px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      border: 0;
+      display: block;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .contact-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(26px, 2.8vw, 36px);
+      margin: 0;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-details p {
+      font-size: 16px;
+      margin: 0;
+      color: #111111;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .btn-secondary-alt {
+      border: 1px solid #111111;
+      color: #111111;
+      padding: 16px 30px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .btn-secondary-alt:hover {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    @media (min-width: 900px) {
+      .contact-wrapper { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* Footer */
+    footer {
+      padding: clamp(48px, 8vw, 80px) clamp(20px, 5vw, 40px) 40px;
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .footer-wrapper {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(28px, 5vw, 48px);
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .footer-column h3 {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #C7A46A;
+      margin: 0 0 20px;
+    }
+
+    .footer-logo {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 8px 16px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo img {
+      height: 26px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .footer-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 32ch;
+      margin: 0;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .footer-copyright {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      margin: 32px 0 0;
+    }
+
+    @media (min-width: 640px) {
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 60;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #111111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 30px rgba(17, 17, 17, 0.3);
+      transition: transform 0.25s ease;
+    }
+
+    .whatsapp-fab:hover {
+      transform: scale(1.08);
+    }
+
+    .whatsapp-fab img {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
+
+    /* ===== PROMPT PREMIUM - Refinamento Visual e UX Mobile ===== */
+
+    /* PROBLEMA 1: Título da Página Inicial Cortado */
+    h1[style*="max-width:14ch"] {
+      max-width: 100% !important;
+      word-spacing: 0.1em !important;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: clamp(1.5rem, 5vw, 1.875rem) !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.02em !important;
+        margin-bottom: 1.25rem !important;
+        max-width: 100% !important;
+      }
+    }
+
+    h1 {
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      hyphens: auto !important;
+    }
+
+    /* PROBLEMA 2: Botões Hero - Premium Refinement */
+    a[style*="background:#111111"],
+    a[style*="padding:17px 32px"] {
+      background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%) !important;
+      color: #ffffff !important;
+      padding: 1rem 2rem !important;
+      border-radius: 12px !important;
+      font-size: 0.95rem !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+      position: relative !important;
+      overflow: hidden !important;
+      min-height: 52px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border: none !important;
+      cursor: pointer !important;
+    }
+
+    a[style*="background:#111111"]:hover {
+      background: linear-gradient(135deg, #C7A46A 0%, #d4b87a 100%) !important;
+      color: #111111 !important;
+      transform: translateY(-4px) !important;
+      box-shadow: 0 16px 32px rgba(199, 164, 106, 0.3),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+      letter-spacing: 0.08em !important;
+    }
+
+    a[style*="background:#111111"]:active {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 16px rgba(199, 164, 106, 0.2),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    }
+
+    /* Botão Secundário - Premium */
+    a[style*="border:1px solid #D9D9D9"] {
+      background: rgba(255, 255, 255, 0.8) !important;
+      border: 2px solid #D9D9D9 !important;
+      color: #111111 !important;
+      padding: 1rem 2rem !important;
+      border-radius: 12px !important;
+      font-size: 0.95rem !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+    }
+
+    a[style*="border:1px solid #D9D9D9"]:hover {
+      background: rgba(199, 164, 106, 0.1) !important;
+      border-color: #C7A46A !important;
+      transform: translateY(-4px) !important;
+      box-shadow: 0 12px 28px rgba(199, 164, 106, 0.15) !important;
+    }
+
+    @media (max-width: 768px) {
+      div[style*="display:flex"][style*="gap:16px"] {
+        flex-direction: column !important;
+        gap: 1rem !important;
+      }
+
+      div[style*="display:flex"][style*="gap:16px"] a {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0.875rem 1.5rem !important;
+        font-size: 0.9375rem !important;
+        min-height: 48px !important;
+      }
+    }
+
+    /* PROBLEMA 3: Tipografia Premium - Luxury */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif !important;
+      letter-spacing: -0.01em !important;
+      color: #111111 !important;
+      font-weight: 700 !important;
+      text-rendering: optimizeLegibility !important;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 6vw, 3.5rem) !important;
+      line-height: 1.1 !important;
+      letter-spacing: -0.02em !important;
+      margin-bottom: 1.5rem !important;
+      font-weight: 700 !important;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+      line-height: 1.15 !important;
+      letter-spacing: -0.015em !important;
+      margin-bottom: 1.25rem !important;
+      font-weight: 700 !important;
+    }
+
+    h3 {
+      font-size: clamp(1rem, 4vw, 1.5rem) !important;
+      line-height: 1.2 !important;
+      letter-spacing: -0.01em !important;
+      margin-bottom: 1rem !important;
+      font-weight: 600 !important;
+    }
+
+    p, span, a {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: 1rem !important;
+      line-height: 1.7 !important;
+      letter-spacing: 0.02em !important;
+      color: #333333 !important;
+      font-weight: 400 !important;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: clamp(1.5rem, 5.5vw, 2.2rem) !important;
+        line-height: 1.12 !important;
+      }
+
+      h2 {
+        font-size: clamp(1.25rem, 4.5vw, 1.875rem) !important;
+        line-height: 1.2 !important;
+      }
+
+      h3 {
+        font-size: clamp(1rem, 3.5vw, 1.25rem) !important;
+      }
+
+      p {
+        font-size: 0.95rem !important;
+        line-height: 1.65 !important;
+      }
+    }
+
+    /* Eyebrow/Label - Pequeno e elegante */
+    p[style*="font-size:13px"],
+    p[style*="text-transform:uppercase"] {
+      font-size: 0.8125rem !important;
+      letter-spacing: 0.12em !important;
+      text-transform: uppercase !important;
+      font-weight: 600 !important;
+      color: #C7A46A !important;
+      margin-bottom: 1rem !important;
+    }
+
+    /* PROBLEMA 4: Imagens - Premium Treatment */
+    img {
+      width: 100% !important;
+      height: auto !important;
+      max-width: 100% !important;
+      display: block !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      border-radius: 16px !important;
+      overflow: hidden !important;
+    }
+
+    div[style*="position:relative"] img,
+    div[style*="position:absolute"] img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      border-radius: 16px !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+      border: none !important;
+    }
+
+    div[style*="flex:1 1 55%"],
+    div[style*="flex:1 1 50%"] {
+      border-radius: 16px !important;
+      overflow: hidden !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    div[style*="position:relative"] {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    @media (max-width: 768px) {
+      img {
+        border-radius: 12px !important;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
+      }
+
+      div[style*="flex:1"] {
+        min-height: 280px !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+      }
+    }
+
+    img:hover {
+      transform: scale(1.02) !important;
+      transition: transform 0.6s ease !important;
+    }
+
+    img {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* PROBLEMA 5: FAQ - Alinhamento Premium */
+    div[class*="faq"],
+    div[style*="flex-direction:column"][style*="gap:12px"] {
+      max-width: 100% !important;
+      width: 100% !important;
+      padding: 0 !important;
+    }
+
+    div[style*="border-bottom:1px solid"],
+    div[style*="padding:28px 0"] {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1rem !important;
+      padding: 1.5rem 0 !important;
+      border-bottom: 1px solid #E5E5E5 !important;
+      align-items: flex-start !important;
+    }
+
+    div[style*="display:flex"][style*="justify-content:space-between"] {
+      width: 100% !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      gap: 1rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    div[style*="display:flex"][style*="justify-content:space-between"] span {
+      flex: 1 !important;
+      font-size: 0.95rem !important;
+      font-weight: 600 !important;
+      color: #111111 !important;
+      line-height: 1.5 !important;
+      text-align: left !important;
+    }
+
+    button[style*="background:none"],
+    div[style*="display:flex"][style*="justify-content:space-between"] button {
+      flex-shrink: 0 !important;
+      width: 40px !important;
+      height: 40px !important;
+      min-width: 40px !important;
+      min-height: 40px !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.3s ease !important;
+    }
+
+    div[style*="max-height:320px"],
+    div[style*="overflow:hidden"] {
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow: hidden !important;
+      transition: max-height 0.3s ease !important;
+    }
+
+    div[style*="max-height:320px"] p,
+    div[style*="overflow:hidden"] p {
+      font-size: 0.9375rem !important;
+      line-height: 1.6 !important;
+      color: #4a4a4a !important;
+      margin: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+      div[style*="padding:28px 0"] {
+        padding: 1.25rem 0 !important;
+        gap: 0.75rem !important;
+      }
+
+      div[style*="display:flex"][style*="justify-content:space-between"] span {
+        font-size: 0.875rem !important;
+      }
+
+      div[style*="max-height:320px"] p {
+        font-size: 0.875rem !important;
+      }
+    }
+
+    /* PROBLEMA 6: Seção Localização - Premium */
+    div[style*="padding:80px 40px"],
+    section[style*="padding:80px"] {
+      padding: 3rem 1.5rem !important;
+      background: linear-gradient(135deg, #ffffff 0%, #F7F7F7 100%) !important;
+      border-top: 1px solid #E5E5E5 !important;
+    }
+
+    div[style*="max-width:1320px"],
+    div[style*="display:grid"][style*="gap:40px"] {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+      align-items: start !important;
+    }
+
+    div[style*="border-radius:12px"] {
+      border-radius: 16px !important;
+      overflow: hidden !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+      min-height: 320px !important;
+      background: #F7F7F7 !important;
+    }
+
+    iframe {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 320px !important;
+      border-radius: 16px !important;
+      border: none !important;
+    }
+
+    div[style*="max-width:1320px"] h2 {
+      font-size: clamp(1.75rem, 5vw, 2.5rem) !important;
+      line-height: 1.15 !important;
+      margin-bottom: 1.5rem !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.02em !important;
+    }
+
+    div[style*="max-width:1320px"] p {
+      font-size: 1rem !important;
+      line-height: 1.7 !important;
+      color: #4a4a4a !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    p[style*="color:#111111"],
+    span[style*="color:#111111"] {
+      font-size: 0.95rem !important;
+      font-weight: 500 !important;
+      color: #111111 !important;
+      line-height: 1.6 !important;
+      margin-bottom: 1rem !important;
+    }
+
+    a[href*="tel:"] {
+      color: #C7A46A !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease !important;
+    }
+
+    a[href*="tel:"]:hover {
+      color: #b8925a !important;
+      text-decoration: underline !important;
+    }
+
+    a[style*="target:_blank"],
+    a[target="_blank"] {
+      background: linear-gradient(135deg, #C7A46A 0%, #d4b87a 100%) !important;
+      color: #111111 !important;
+      padding: 0.875rem 1.75rem !important;
+      border-radius: 12px !important;
+      font-size: 0.9375rem !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+      box-shadow: 0 8px 20px rgba(199, 164, 106, 0.2) !important;
+      border: none !important;
+      cursor: pointer !important;
+      min-height: 44px !important;
+      margin-top: 1rem !important;
+    }
+
+    a[target="_blank"]:hover {
+      background: linear-gradient(135deg, #b8925a 0%, #c9a86d 100%) !important;
+      transform: translateY(-3px) !important;
+      box-shadow: 0 12px 28px rgba(199, 164, 106, 0.3) !important;
+    }
+
+    @media (max-width: 768px) {
+      div[style*="padding:80px 40px"] {
+        padding: 2rem 1.25rem !important;
+      }
+
+      div[style*="display:grid"][style*="gap:40px"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+
+      div[style*="border-radius:12px"] {
+        min-height: 280px !important;
+      }
+
+      iframe {
+        min-height: 280px !important;
+      }
+
+      a[style*="target:_blank"],
+      a[href*="google.com"] {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+    }
+
+    /* PROBLEMA 7: Rodapé - Premium Refinement (mantendo responsividade original) */
+    footer {
+      background: linear-gradient(180deg, #111111 0%, #1a1a1a 100%) !important;
+    }
+
+    footer h3 {
+      color: #C7A46A !important;
+    }
+
+    footer a:hover {
+      color: #C7A46A !important;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      footer {
+        background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%) !important;
+      }
+    }
+
+    /* ===== FIM PROMPT PREMIUM ===== */
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="#inicio" class="logo">
+          <img loading="lazy" src="assets/trend-hair-logo.png" alt="Trend Hair">
+        </a>
+        <nav class="desktop-nav">
+          <a href="#inicio">Início</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#avaliacoes">Avaliações</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <button class="hamburger-btn" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="header-bottom">
+        <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="cta-button">Agendar Horário</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#inicio">Início</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#avaliacoes">Avaliações</a>
+    <a href="#contato">Contato</a>
+    <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="cta-button">Agendar pelo WhatsApp</a>
+  </div>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+      <div class="hero-copy">
+        <div>
+          <p class="tagline">Trend Hair · Porto Alegre</p>
+          <h1>Sua beleza merece um atendimento à altura.</h1>
+          <p>Mais do que um salão, oferecemos uma experiência completa em beleza, autoestima e bem-estar.</p>
+        </div>
+        <div class="buttons">
+          <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="btn-primary">Agendar pelo WhatsApp</a>
+          <a href="#servicos" class="btn-secondary">Conhecer Serviços</a>
+        </div>
+        <div class="rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-text"><span id="rating-number">4.8</span> estrelas</span>
+          <span class="divider"></span>
+          <span class="reviews-count">+<span id="reviews-count">530</span> avaliações</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img loading="lazy" src="assets/photos/hero.jpg" alt="Mulher elegante em atendimento no Trend Hair">
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon"></div>
+          <p>Ambiente Climatizado</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"></div>
+          <p>Profissionais Especializadas</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"></div>
+          <p>Produtos Premium</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"></div>
+          <p>Agendamento Fácil</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="sobre">
+      <div class="about-image">
+        <img loading="lazy" src="assets/photos/sobre.jpg" alt="Interior do salão Trend Hair">
+      </div>
+      <div class="about-content">
+        <p class="tagline">Sobre o Trend Hair</p>
+        <h2>Um espaço para cuidar de você por inteiro.</h2>
+        <p>Há anos recebemos mulheres de Porto Alegre em um ambiente elegante, pensado em cada detalhe: da cafeteria acolhedora ao jardim que convida ao descanso entre um serviço e outro.</p>
+        <p>Nossa equipe de profissionais experientes trabalha com atendimento personalizado, unindo técnica, escuta e produtos premium para revelar o melhor da sua beleza.</p>
+        <div class="highlights">
+          <div class="highlight">
+            <div class="highlight-dot"></div>
+            <span class="highlight-text">Ambiente elegante e climatizado</span>
+          </div>
+          <div class="highlight">
+            <div class="highlight-dot"></div>
+            <span class="highlight-text">Cafeteria e jardim internos</span>
+          </div>
+          <div class="highlight">
+            <div class="highlight-dot"></div>
+            <span class="highlight-text">Profissionais experientes</span>
+          </div>
+          <div class="highlight">
+            <div class="highlight-dot"></div>
+            <span class="highlight-text">Atendimento personalizado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="servicos">
+      <div class="section-header">
+        <p class="tagline">Serviços</p>
+        <h2 class="section-title">Cuidados pensados para cada momento da sua rotina.</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <img loading="lazy" src="assets/photos/servico-corte-feminino.jpg" alt="Corte Feminino" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Corte Feminino</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img loading="lazy" src="assets/photos/servico-coloracao.jpg" alt="Coloração" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Coloração</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img loading="lazy" src="assets/photos/servico-mechas.jpg" alt="Mechas" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Mechas</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img loading="lazy" src="assets/photos/servico-escova.jpg" alt="Escova" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Escova</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img loading="lazy" src="assets/photos/servico-tratamentos.jpg" alt="Tratamentos Capilares" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Tratamentos Capilares</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img loading="lazy" src="assets/photos/servico-manicure.jpg" alt="Manicure" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Manicure</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img loading="lazy" src="assets/photos/servico-pedicure.jpg" alt="Pedicure" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Pedicure</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img loading="lazy" src="assets/photos/servico-sobrancelhas.jpg" alt="Sobrancelhas" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Sobrancelhas</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img loading="lazy" src="assets/photos/servico-maquiagem.jpg" alt="Maquiagem" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Maquiagem</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img loading="lazy" src="assets/photos/servico-penteados.jpg" alt="Penteados" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Penteados</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 48px;">
+        <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="btn-secondary">Ver todos os serviços</a>
+      </div>
+    </section>
+
+    <!-- Before/After Section -->
+    <section class="before-after-section" id="antes-depois">
+      <div class="ba-header">
+        <p class="tagline">Transformações</p>
+        <h2>Antes e Depois</h2>
+      </div>
+      <div class="ba-carousel-wrapper">
+        <div class="ba-carousel" id="baCarousel">
+          <div class="ba-pair">
+            <div class="ba-image-wrapper">
+              <img loading="lazy" src="assets/photos/ba-antes-1.jpg" alt="Antes" class="ba-image">
+              <span class="ba-label before">Antes</span>
+            </div>
+            <div class="ba-image-wrapper">
+              <img loading="lazy" src="assets/photos/ba-depois-1.jpg" alt="Depois" class="ba-image">
+              <span class="ba-label after">Depois</span>
+            </div>
+          </div>
+          <div class="ba-pair">
+            <div class="ba-image-wrapper">
+              <img loading="lazy" src="assets/photos/ba-antes-2.jpg" alt="Antes" class="ba-image">
+              <span class="ba-label before">Antes</span>
+            </div>
+            <div class="ba-image-wrapper">
+              <img loading="lazy" src="assets/photos/ba-depois-2.jpg" alt="Depois" class="ba-image">
+              <span class="ba-label after">Depois</span>
+            </div>
+          </div>
+          <div class="ba-pair">
+            <div class="ba-image-wrapper">
+              <img loading="lazy" src="assets/photos/ba-antes-3.jpg" alt="Antes" class="ba-image">
+              <span class="ba-label before">Antes</span>
+            </div>
+            <div class="ba-image-wrapper">
+              <img loading="lazy" src="assets/photos/ba-depois-3.jpg" alt="Depois" class="ba-image">
+              <span class="ba-label after">Depois</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ba-controls">
+        <button class="ba-btn" id="baPrev">←</button>
+        <button class="ba-btn" id="baNext">→</button>
+      </div>
+    </section>
+
+    <!-- Differentials Section -->
+    <section class="differentials-section">
+      <div class="diff-title">
+        <p class="tagline">Diferenciais</p>
+        <h2>O que torna sua experiência única.</h2>
+      </div>
+      <div class="diff-grid">
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Atendimento personalizado</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Produtos profissionais</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Ambiente sofisticado</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Profissionais especializados</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Horários flexíveis</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Excelente localização</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Atendimento humanizado</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Alta avaliação no Google</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="avaliacoes">
+      <div class="testimonials-wrapper">
+        <div class="testimonial-header">
+          <p class="testimonial-rating" id="testimonialRating">4.8</p>
+          <p class="testimonial-stars">★★★★★</p>
+          <p class="testimonial-count">+530 avaliações no Google</p>
+        </div>
+        <div class="testimonial-content">
+          <p class="testimonial-text" id="testimonialText">"Profissionais excelentes, ambiente acolhedor e ótimos produtos."</p>
+          <p class="testimonial-stars">★★★★★</p>
+          <p style="font-size: 14px; color: #4a4a4a; margin: 0;">Avaliação verificada no Google</p>
+          <div class="testimonial-dots" id="testimonialDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-section">
+      <div class="how-wrapper">
+        <div class="how-header">
+          <p class="tagline">Como Funciona</p>
+        </div>
+        <div class="how-grid">
+          <div class="step">
+            <div class="step-number">1</div>
+            <p class="step-text">Escolha o serviço</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <p class="step-text">Agende pelo WhatsApp</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <p class="step-text">Confirme o horário</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <p class="step-text">Venha viver sua experiência</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-wrapper">
+        <h2>Reserve seu horário hoje mesmo.</h2>
+        <p>Atendimento personalizado para valorizar ainda mais sua beleza.</p>
+        <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="cta-button-large">Agendar pelo WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-wrapper">
+        <div class="faq-header">
+          <p class="tagline">Dúvidas</p>
+          <h2 class="section-title">Perguntas Frequentes</h2>
+        </div>
+        <div class="faq-items">
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq(this)">
+              <span>Quanto tempo dura o atendimento?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Depende do serviço escolhido: um corte leva cerca de 40 minutos, enquanto coloração e mechas podem levar de 2 a 4 horas. Ao agendar pelo WhatsApp, nossa equipe informa o tempo estimado do seu atendimento.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq(this)">
+              <span>Precisa agendar?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Recomendamos agendar com antecedência para garantir o melhor horário, mas também recebemos clientes espontâneas conforme a disponibilidade da agenda.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq(this)">
+              <span>Aceitam cartão?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sim. Aceitamos cartão de crédito, débito, PIX e dinheiro.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq(this)">
+              <span>Fazem atendimento para noivas?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sim, temos um pacote completo para noivas, incluindo teste de penteado e maquiagem, com atendimento exclusivo no grande dia.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq(this)">
+              <span>Tem estacionamento?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sim, contamos com vagas próximas ao salão para maior comodidade das clientes.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq(this)">
+              <span>Quais os horários?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Funcionamos de terça a sábado. Consulte os horários exatos e disponibilidade pelo WhatsApp.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contato">
+      <div class="contact-wrapper">
+        <div class="map-container">
+          <iframe title="Mapa Trend Hair" loading="lazy" src="https://www.google.com/maps?q=Av.+Getúlio+Vargas+1671+Porto+Alegre&output=embed"></iframe>
+        </div>
+        <div class="contact-info">
+          <p class="tagline">Localização</p>
+          <h2>Venha nos visitar em Porto Alegre.</h2>
+          <div class="contact-details">
+            <p>Av. Getúlio Vargas, 1671 · Menino Deus · Porto Alegre</p>
+            <p>(51) 3093-0393</p>
+          </div>
+          <div class="contact-buttons">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Av.+Getúlio+Vargas+1671+Porto+Alegre" target="_blank" rel="noopener" class="btn-secondary-alt">Como Chegar</a>
+            <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="cta-button">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-wrapper">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img loading="lazy" src="assets/trend-hair-logo.png" alt="Trend Hair">
+          </div>
+          <p class="footer-text">Salão de beleza premium em Porto Alegre. Luxo acessível, confiança e bem-estar em cada detalhe.</p>
+        </div>
+        <div>
+          <h3>Redes Sociais</h3>
+          <div class="footer-links">
+            <a href="https://www.instagram.com/estetica_trendhair/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/trend.hair.rs/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://wa.me/5551991528060" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+        <div>
+          <h3>Endereço & Horário</h3>
+          <p class="footer-text">Av. Getúlio Vargas, 1671<br>Menino Deus, Porto Alegre<br><br>Terça a Sábado<br>09h às 20h</p>
+        </div>
+        <div>
+          <h3>Links Úteis</h3>
+          <div class="footer-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#contato">Contato</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-copyright">© 2026 Trend Hair. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Agendar pelo WhatsApp">
+    <img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="">
+  </a>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Close mobile menu when clicking on a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Header scroll detection
+    const header = document.getElementById('header');
+    const headerSentinel = document.createElement('div');
+    headerSentinel.style.position = 'absolute';
+    headerSentinel.style.top = '0';
+    headerSentinel.style.height = '1px';
+    headerSentinel.style.width = '1px';
+    document.querySelector('.container').prepend(headerSentinel);
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        const isVisible = entries[0].isIntersecting;
+        header.classList.toggle('scrolled', !isVisible);
+      });
+      observer.observe(headerSentinel);
+    }
+
+    // Testimonials carousel
+    const testimonials = [
+      { text: '"Profissionais excelentes, ambiente acolhedor e ótimos produtos."' },
+      { text: '"Ótimas profissionais, serviço excelente e preços em conta."' },
+      { text: '"Espaço maravilhoso, cafeteria linda e atendimento impecável."' }
+    ];
+
+    let currentTestimonial = 0;
+
+    function updateTestimonials() {
+      const textEl = document.getElementById('testimonialText');
+      const dotsEl = document.getElementById('testimonialDots');
+
+      textEl.textContent = testimonials[currentTestimonial].text;
+
+      // Update dots
+      dotsEl.innerHTML = '';
+      testimonials.forEach((_, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'dot-button' + (i === currentTestimonial ? ' active' : '');
+        btn.innerHTML = '<span class="dot"></span>';
+        btn.addEventListener('click', () => {
+          currentTestimonial = i;
+          updateTestimonials();
+        });
+        dotsEl.appendChild(btn);
+      });
+    }
+
+    updateTestimonials();
+
+    // Auto-rotate testimonials every 6 seconds
+    setInterval(() => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      updateTestimonials();
+    }, 6000);
+
+    // Before/After carousel
+    const baCarousel = document.getElementById('baCarousel');
+    const baPrev = document.getElementById('baPrev');
+    const baNext = document.getElementById('baNext');
+    let baIndex = 0;
+
+    function updateBaCarousel() {
+      baCarousel.style.transform = `translateX(-${baIndex * 100}%)`;
+    }
+
+    baPrev.addEventListener('click', () => {
+      baIndex = (baIndex - 1 + 3) % 3;
+      updateBaCarousel();
+    });
+
+    baNext.addEventListener('click', () => {
+      baIndex = (baIndex + 1) % 3;
+      updateBaCarousel();
+    });
+
+    // FAQ accordion
+    function toggleFaq(button) {
+      const faqItem = button.parentElement;
+      const answer = faqItem.querySelector('.faq-answer');
+      const icon = button.querySelector('.faq-icon');
+
+      answer.classList.toggle('open');
+      icon.style.transform = answer.classList.contains('open') ? 'rotate(45deg)' : 'rotate(0deg)';
+    }
+
+    // Counter animation
+    function animateCounter(id, target, duration = 1200) {
+      const el = document.getElementById(id);
+      const start = performance.now();
+
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(1, elapsed / duration);
+
+        if (id === 'rating-number') {
+          el.textContent = (4.8 * progress).toFixed(1);
+        } else {
+          el.textContent = Math.round(530 * progress);
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    // Start counter animations when page loads
+    window.addEventListener('load', () => {
+      animateCounter('rating-number', 4.8);
+      animateCounter('reviews-count', 530);
+    });
+
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
