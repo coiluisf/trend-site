@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trend Hair - Salão de beleza premium em Porto Alegre. Conheça nossos serviços de corte, coloração, penteados e muito mais.">
+  <meta name="keywords" content="salão, beleza, cabelo, Porto Alegre, estética">
+  <meta property="og:title" content="Trend Hair - Salão de Beleza Premium">
+  <meta property="og:description" content="Salão de beleza premium em Porto Alegre com atendimento personalizado">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#C7A46A">
+  <title>Trend Hair - Salão de Beleza Premium em Porto Alegre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+    body {
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: #111111; text-decoration: none; }
+    a:hover { color: #C7A46A; }
+
+    ::selection { background: #C7A46A; color: #ffffff; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(217, 217, 217, 0);
+      transition: background 0.4s ease, border-color 0.4s ease;
+    }
+
+    header.scrolled {
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom-color: #D9D9D9;
+    }
+
+    .header-inner {
+      width: 100%;
+      max-width: 1400px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .logo { display: flex; align-items: center; height: 34px; }
+    .logo img { height: 32px; width: auto; object-fit: contain; filter: grayscale(1) contrast(1.1); }
+
+    nav { display: none; align-items: center; gap: 40px; }
+    nav.desktop-nav { display: flex; }
+    nav a { font-size: 14px; letter-spacing: 0.03em; color: #111111; font-weight: 500; }
+
+    .nav-actions { display: flex; align-items: center; gap: 20px; }
+
+    .cta-button {
+      display: none;
+      background: #C7A46A;
+      color: #111111;
+      padding: 12px 26px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .cta-button:hover {
+      background: #b8925a;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(199, 164, 106, 0.35);
+    }
+
+    .hamburger-btn {
+      display: flex;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .hamburger-btn span {
+      position: absolute;
+      width: 22px;
+      height: 1.5px;
+      background: #111111;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger-btn span:nth-child(1) { top: 0; }
+    .hamburger-btn span:nth-child(2) { top: 6px; }
+    .hamburger-btn span:nth-child(3) { top: 12px; }
+
+    .hamburger-btn.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger-btn.active span:nth-child(2) { opacity: 0; }
+    .hamburger-btn.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 45;
+      background: #ffffff;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      color: #111111;
+    }
+
+    .mobile-menu .cta-button {
+      display: inline-block;
+      margin-top: 16px;
+    }
+
+    @media (min-width: 900px) {
+      nav.desktop-nav { display: flex !important; }
+      .hamburger-btn { display: none !important; }
+      .cta-button { display: inline-block !important; }
+    }
+
+    /* Main Container */
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      font-family: 'Inter', sans-serif;
+      color: #111111;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      min-height: auto;
+      padding-top: 88px;
+    }
+
+    .hero-copy {
+      flex: 1 1 50%;
+      min-width: 0;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 28px;
+      order: 1;
+    }
+
+    .hero-copy h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(34px, 4.4vw, 58px);
+      line-height: 1.12;
+      margin: 0 0 22px;
+      max-width: 14ch;
+    }
+
+    .hero-copy > div:first-child { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .hero-copy .buttons { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; }
+    .hero-copy .rating { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both; }
+
+    .tagline {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #C7A46A;
+      font-weight: 600;
+      margin: 0 0 18px;
+    }
+
+    .hero-copy p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #4a4a4a;
+      max-width: 46ch;
+      margin: 0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary, .btn-secondary {
+      padding: 17px 32px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: #C7A46A;
+      color: #111111;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid #D9D9D9;
+      color: #111111;
+    }
+
+    .btn-secondary:hover {
+      border-color: #111111;
+      transform: translateY(-2px);
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .stars {
+      color: #C7A46A;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .rating-text {
+      font-size: 15px;
+      color: #111111;
+      font-weight: 600;
+    }
+
+    .divider {
+      width: 1px;
+      height: 16px;
+      background: #D9D9D9;
+    }
+
+    .reviews-count {
+      font-size: 15px;
+      color: #4a4a4a;
+    }
+
+    .hero-image {
+      flex: none;
+      min-width: 0;
+      position: relative;
+      width: 100%;
+      height: 340px;
+      order: -1;
+    }
+
+    .hero-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (min-width: 900px) {
+      .hero-section { flex-direction: row; min-height: 100dvh; padding-top: 76px; }
+      .hero-copy { padding: 0 min(6vw, 72px); order: 0; }
+      .hero-image { order: 0; flex: 1 1 50%; width: auto; height: auto; }
+    }
+
+    /* Benefits Section */
+    .benefits-section {
+      padding: clamp(48px, 8vw, 80px) clamp(20px, 5vw, 40px);
+      background: #F7F7F7;
+    }
+
+    .benefits-grid {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: #D9D9D9;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .benefit-item {
+      background: #ffffff;
+      padding: 40px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .benefit-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid #C7A46A;
+    }
+
+    .benefit-item p {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      margin: 0;
+    }
+
+    @media (min-width: 640px) {
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .benefits-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    /* About Section */
+    .about-section {
+      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(32px, 6vw, 80px);
+    }
+
+    .about-image {
+      flex: 1 1 55%;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+    }
+
+    .about-content {
+      flex: 1 1 45%;
+      min-width: 0;
+    }
+
+    .about-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.2;
+      margin: 0 0 24px;
+    }
+
+    .about-content p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #4a4a4a;
+      margin: 0 0 20px;
+    }
+
+    .highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .highlight {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .highlight-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #C7A46A;
+      flex: none;
+    }
+
+    .highlight-text {
+      font-size: 15px;
+      color: #111111;
+    }
+
+    @media (min-width: 900px) {
+      .about-section { flex-direction: row; }
+    }
+
+    /* Services Section */
+    .services-section {
+      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+    }
+
+    .section-header {
+      max-width: 1320px;
+      margin: 0 auto 56px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(28px, 3vw, 40px);
+      margin: 0;
+      max-width: 14ch;
+    }
+
+    .services-grid {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .service-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #F7F7F7;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(17, 17, 17, 0.08);
+    }
+
+    .service-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-info {
+      padding: 20px 22px 24px;
+    }
+
+    .service-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    @media (min-width: 640px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    /* Before/After Section */
+    .before-after-section {
+      padding: clamp(56px, 9vw, 100px) clamp(20px, 5vw, 40px);
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .ba-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 56px;
+    }
+
+    .ba-header .tagline { color: #C7A46A; }
+    .ba-header h2 { color: #ffffff; }
+
+    .ba-carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .ba-carousel {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .ba-pair {
+      flex: 0 0 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .ba-image-wrapper {
+      position: relative;
+    }
+
+    .ba-image {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .ba-label {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ba-label.before {
+      background: rgba(17, 17, 17, 0.55);
+      color: #fff;
+    }
+
+    .ba-label.after {
+      background: rgba(199, 164, 106, 0.95);
+      color: #111111;
+      font-weight: 600;
+    }
+
+    .ba-controls {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .ba-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      transition: border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .ba-btn:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Differentials Section */
+    .differentials-section {
+      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+      background: #F7F7F7;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(32px, 6vw, 80px);
+      align-items: flex-start;
+    }
+
+    .diff-title { flex: 1 1 40%; min-width: 0; position: static; }
+    .diff-title h2 { max-width: 12ch; }
+
+    .diff-grid {
+      flex: 1 1 60%;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px 40px;
+    }
+
+    .diff-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid #D9D9D9;
+    }
+
+    .diff-check {
+      color: #C7A46A;
+      font-size: 16px;
+    }
+
+    .diff-text {
+      font-size: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .diff-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 900px) {
+      .differentials-section { flex-direction: row; }
+      .diff-title { position: sticky; top: 120px; }
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+    }
+
+    .testimonials-wrapper {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(32px, 6vw, 80px);
+      align-items: center;
+    }
+
+    .testimonial-header {
+      flex: none;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #D9D9D9;
+      padding-bottom: 40px;
+    }
+
+    .testimonial-rating {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .testimonial-stars {
+      color: #C7A46A;
+      font-size: 20px;
+      letter-spacing: 3px;
+      margin: 14px 0;
+    }
+
+    .testimonial-count {
+      font-size: 15px;
+      color: #4a4a4a;
+      margin: 0;
+    }
+
+    .testimonial-content {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .testimonial-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(20px, 2.4vw, 28px);
+      line-height: 1.5;
+      margin: 0 0 24px;
+      max-width: 32ch;
+    }
+
+    .testimonial-dots {
+      display: flex;
+      gap: 10px;
+      margin-top: 40px;
+    }
+
+    .dot-button {
+      padding: 18px 6px;
+      margin: -18px -6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .dot {
+      height: 8px;
+      border-radius: 999px;
+      background: #D9D9D9;
+      transition: width 0.3s ease, background 0.3s ease;
+      width: 8px;
+      display: block;
+    }
+
+    .dot-button.active .dot {
+      width: 28px;
+      background: #C7A46A;
+    }
+
+    @media (min-width: 900px) {
+      .testimonials-wrapper { flex-direction: row; }
+      .testimonial-header { flex: 0 0 280px; width: auto; border-right: 1px solid #D9D9D9; border-bottom: none; padding-right: 60px; padding-bottom: 0; }
+    }
+
+    /* How It Works Section */
+    .how-section {
+      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .how-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .how-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 56px;
+    }
+
+    .how-header .tagline { color: #C7A46A; }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .step {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .step-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid #C7A46A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: #C7A46A;
+    }
+
+    .step-text {
+      font-size: 15px;
+      line-height: 1.5;
+      margin: 0;
+      max-width: 18ch;
+    }
+
+    @media (min-width: 1024px) {
+      .how-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: clamp(72px, 12vw, 140px) clamp(20px, 5vw, 40px);
+      text-align: center;
+      background: #F7F7F7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(32px, 4vw, 52px);
+      margin: 0 0 22px;
+      line-height: 1.15;
+    }
+
+    .cta-section p {
+      font-size: 17px;
+      color: #4a4a4a;
+      margin: 0 0 40px;
+    }
+
+    .cta-button-large {
+      display: inline-block;
+      background: #C7A46A;
+      color: #111111;
+      padding: 20px 48px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .cta-button-large:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(199, 164, 106, 0.4);
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+    }
+
+    .faq-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .faq-items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #D9D9D9;
+    }
+
+    .faq-button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 26px 4px;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: #111111;
+    }
+
+    .faq-icon {
+      font-size: 20px;
+      color: #C7A46A;
+      transition: transform 0.3s ease;
+      flex: none;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-answer.open {
+      max-height: 320px;
+    }
+
+    .faq-answer p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #4a4a4a;
+      margin: 0 0 26px;
+      padding: 0 4px;
+      max-width: 65ch;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 40px);
+      background: #F7F7F7;
+    }
+
+    .contact-wrapper {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 56px;
+    }
+
+    .map-container {
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 420px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      border: 0;
+      display: block;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .contact-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(26px, 2.8vw, 36px);
+      margin: 0;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-details p {
+      font-size: 16px;
+      margin: 0;
+      color: #111111;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .btn-secondary-alt {
+      border: 1px solid #111111;
+      color: #111111;
+      padding: 16px 30px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .btn-secondary-alt:hover {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    @media (min-width: 900px) {
+      .contact-wrapper { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* Footer */
+    footer {
+      padding: clamp(48px, 8vw, 80px) clamp(20px, 5vw, 40px) 40px;
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .footer-wrapper {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(28px, 5vw, 48px);
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .footer-column h3 {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #C7A46A;
+      margin: 0 0 20px;
+    }
+
+    .footer-logo {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 8px 16px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo img {
+      height: 26px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .footer-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 32ch;
+      margin: 0;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .footer-copyright {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      margin: 32px 0 0;
+    }
+
+    @media (min-width: 640px) {
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 60;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #111111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 30px rgba(17, 17, 17, 0.3);
+      transition: transform 0.25s ease;
+    }
+
+    .whatsapp-fab:hover {
+      transform: scale(1.08);
+    }
+
+    .whatsapp-fab img {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div class="header-inner">
+      <a href="#inicio" class="logo">
+        <img src="assets/trend-hair-logo.png" alt="Trend Hair">
+      </a>
+      <nav class="desktop-nav">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="cta-button">Agendar Horário</a>
+        <button class="hamburger-btn" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#inicio">Início</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#avaliacoes">Avaliações</a>
+    <a href="#contato">Contato</a>
+    <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="cta-button">Agendar pelo WhatsApp</a>
+  </div>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+      <div class="hero-copy">
+        <div>
+          <p class="tagline">Trend Hair · Porto Alegre</p>
+          <h1>Sua beleza merece um atendimento à altura.</h1>
+          <p>Mais do que um salão, oferecemos uma experiência completa em beleza, autoestima e bem-estar.</p>
+        </div>
+        <div class="buttons">
+          <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="btn-primary">Agendar pelo WhatsApp</a>
+          <a href="#servicos" class="btn-secondary">Conhecer Serviços</a>
+        </div>
+        <div class="rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-text"><span id="rating-number">4.8</span> estrelas</span>
+          <span class="divider"></span>
+          <span class="reviews-count">+<span id="reviews-count">530</span> avaliações</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/photos/hero.jpg" alt="Mulher elegante em atendimento no Trend Hair">
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon"></div>
+          <p>Ambiente Climatizado</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"></div>
+          <p>Profissionais Especializadas</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"></div>
+          <p>Produtos Premium</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"></div>
+          <p>Agendamento Fácil</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="sobre">
+      <div class="about-image">
+        <img src="assets/photos/sobre.jpg" alt="Interior do salão Trend Hair">
+      </div>
+      <div class="about-content">
+        <p class="tagline">Sobre o Trend Hair</p>
+        <h2>Um espaço para cuidar de você por inteiro.</h2>
+        <p>Há anos recebemos mulheres de Porto Alegre em um ambiente elegante, pensado em cada detalhe: da cafeteria acolhedora ao jardim que convida ao descanso entre um serviço e outro.</p>
+        <p>Nossa equipe de profissionais experientes trabalha com atendimento personalizado, unindo técnica, escuta e produtos premium para revelar o melhor da sua beleza.</p>
+        <div class="highlights">
+          <div class="highlight">
+            <div class="highlight-dot"></div>
+            <span class="highlight-text">Ambiente elegante e climatizado</span>
+          </div>
+          <div class="highlight">
+            <div class="highlight-dot"></div>
+            <span class="highlight-text">Cafeteria e jardim internos</span>
+          </div>
+          <div class="highlight">
+            <div class="highlight-dot"></div>
+            <span class="highlight-text">Profissionais experientes</span>
+          </div>
+          <div class="highlight">
+            <div class="highlight-dot"></div>
+            <span class="highlight-text">Atendimento personalizado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="servicos">
+      <div class="section-header">
+        <p class="tagline">Serviços</p>
+        <h2 class="section-title">Cuidados pensados para cada momento da sua rotina.</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="assets/photos/servico-corte-feminino.jpg" alt="Corte Feminino" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Corte Feminino</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="assets/photos/servico-coloracao.jpg" alt="Coloração" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Coloração</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="assets/photos/servico-mechas.jpg" alt="Mechas" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Mechas</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="assets/photos/servico-escova.jpg" alt="Escova" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Escova</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="assets/photos/servico-tratamentos.jpg" alt="Tratamentos Capilares" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Tratamentos Capilares</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="assets/photos/servico-manicure.jpg" alt="Manicure" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Manicure</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="assets/photos/servico-pedicure.jpg" alt="Pedicure" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Pedicure</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="assets/photos/servico-sobrancelhas.jpg" alt="Sobrancelhas" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Sobrancelhas</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="assets/photos/servico-maquiagem.jpg" alt="Maquiagem" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Maquiagem</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="assets/photos/servico-penteados.jpg" alt="Penteados" class="service-image">
+          <div class="service-info">
+            <p class="service-name">Penteados</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 48px;">
+        <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="btn-secondary">Ver todos os serviços</a>
+      </div>
+    </section>
+
+    <!-- Before/After Section -->
+    <section class="before-after-section" id="antes-depois">
+      <div class="ba-header">
+        <p class="tagline">Transformações</p>
+        <h2>Antes e Depois</h2>
+      </div>
+      <div class="ba-carousel-wrapper">
+        <div class="ba-carousel" id="baCarousel">
+          <div class="ba-pair">
+            <div class="ba-image-wrapper">
+              <img src="assets/photos/ba-antes-1.jpg" alt="Antes" class="ba-image">
+              <span class="ba-label before">Antes</span>
+            </div>
+            <div class="ba-image-wrapper">
+              <img src="assets/photos/ba-depois-1.jpg" alt="Depois" class="ba-image">
+              <span class="ba-label after">Depois</span>
+            </div>
+          </div>
+          <div class="ba-pair">
+            <div class="ba-image-wrapper">
+              <img src="assets/photos/ba-antes-2.jpg" alt="Antes" class="ba-image">
+              <span class="ba-label before">Antes</span>
+            </div>
+            <div class="ba-image-wrapper">
+              <img src="assets/photos/ba-depois-2.jpg" alt="Depois" class="ba-image">
+              <span class="ba-label after">Depois</span>
+            </div>
+          </div>
+          <div class="ba-pair">
+            <div class="ba-image-wrapper">
+              <img src="assets/photos/ba-antes-3.jpg" alt="Antes" class="ba-image">
+              <span class="ba-label before">Antes</span>
+            </div>
+            <div class="ba-image-wrapper">
+              <img src="assets/photos/ba-depois-3.jpg" alt="Depois" class="ba-image">
+              <span class="ba-label after">Depois</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ba-controls">
+        <button class="ba-btn" id="baPrev">←</button>
+        <button class="ba-btn" id="baNext">→</button>
+      </div>
+    </section>
+
+    <!-- Differentials Section -->
+    <section class="differentials-section">
+      <div class="diff-title">
+        <p class="tagline">Diferenciais</p>
+        <h2>O que torna sua experiência única.</h2>
+      </div>
+      <div class="diff-grid">
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Atendimento personalizado</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Produtos profissionais</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Ambiente sofisticado</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Profissionais especializados</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Horários flexíveis</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Excelente localização</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Atendimento humanizado</span>
+        </div>
+        <div class="diff-item">
+          <span class="diff-check">✔</span>
+          <span class="diff-text">Alta avaliação no Google</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="avaliacoes">
+      <div class="testimonials-wrapper">
+        <div class="testimonial-header">
+          <p class="testimonial-rating" id="testimonialRating">4.8</p>
+          <p class="testimonial-stars">★★★★★</p>
+          <p class="testimonial-count">+530 avaliações no Google</p>
+        </div>
+        <div class="testimonial-content">
+          <p class="testimonial-text" id="testimonialText">"Profissionais excelentes, ambiente acolhedor e ótimos produtos."</p>
+          <p class="testimonial-stars">★★★★★</p>
+          <p style="font-size: 14px; color: #4a4a4a; margin: 0;">Avaliação verificada no Google</p>
+          <div class="testimonial-dots" id="testimonialDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-section">
+      <div class="how-wrapper">
+        <div class="how-header">
+          <p class="tagline">Como Funciona</p>
+        </div>
+        <div class="how-grid">
+          <div class="step">
+            <div class="step-number">1</div>
+            <p class="step-text">Escolha o serviço</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <p class="step-text">Agende pelo WhatsApp</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <p class="step-text">Confirme o horário</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <p class="step-text">Venha viver sua experiência</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-wrapper">
+        <h2>Reserve seu horário hoje mesmo.</h2>
+        <p>Atendimento personalizado para valorizar ainda mais sua beleza.</p>
+        <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="cta-button-large">Agendar pelo WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-wrapper">
+        <div class="faq-header">
+          <p class="tagline">Dúvidas</p>
+          <h2 class="section-title">Perguntas Frequentes</h2>
+        </div>
+        <div class="faq-items">
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq(this)">
+              <span>Quanto tempo dura o atendimento?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Depende do serviço escolhido: um corte leva cerca de 40 minutos, enquanto coloração e mechas podem levar de 2 a 4 horas. Ao agendar pelo WhatsApp, nossa equipe informa o tempo estimado do seu atendimento.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq(this)">
+              <span>Precisa agendar?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Recomendamos agendar com antecedência para garantir o melhor horário, mas também recebemos clientes espontâneas conforme a disponibilidade da agenda.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq(this)">
+              <span>Aceitam cartão?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sim. Aceitamos cartão de crédito, débito, PIX e dinheiro.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq(this)">
+              <span>Fazem atendimento para noivas?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sim, temos um pacote completo para noivas, incluindo teste de penteado e maquiagem, com atendimento exclusivo no grande dia.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq(this)">
+              <span>Tem estacionamento?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sim, contamos com vagas próximas ao salão para maior comodidade das clientes.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq(this)">
+              <span>Quais os horários?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Funcionamos de terça a sábado. Consulte os horários exatos e disponibilidade pelo WhatsApp.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contato">
+      <div class="contact-wrapper">
+        <div class="map-container">
+          <iframe title="Mapa Trend Hair" loading="lazy" src="https://www.google.com/maps?q=Av.+Getúlio+Vargas+1671+Porto+Alegre&output=embed"></iframe>
+        </div>
+        <div class="contact-info">
+          <p class="tagline">Localização</p>
+          <h2>Venha nos visitar em Porto Alegre.</h2>
+          <div class="contact-details">
+            <p>Av. Getúlio Vargas, 1671 · Menino Deus · Porto Alegre</p>
+            <p>(51) 3093-0393</p>
+          </div>
+          <div class="contact-buttons">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Av.+Getúlio+Vargas+1671+Porto+Alegre" target="_blank" rel="noopener" class="btn-secondary-alt">Como Chegar</a>
+            <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="cta-button">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-wrapper">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="assets/trend-hair-logo.png" alt="Trend Hair">
+          </div>
+          <p class="footer-text">Salão de beleza premium em Porto Alegre. Luxo acessível, confiança e bem-estar em cada detalhe.</p>
+        </div>
+        <div>
+          <h3>Redes Sociais</h3>
+          <div class="footer-links">
+            <a href="https://www.instagram.com/estetica_trendhair/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/trend.hair.rs/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://wa.me/5551991528060" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+        <div>
+          <h3>Endereço & Horário</h3>
+          <p class="footer-text">Av. Getúlio Vargas, 1671<br>Menino Deus, Porto Alegre<br><br>Terça a Sábado<br>09h às 20h</p>
+        </div>
+        <div>
+          <h3>Links Úteis</h3>
+          <div class="footer-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#contato">Contato</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-copyright">© 2026 Trend Hair. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/5551991528060?text=Olá%2C%20gostaria%20de%20agendar%20um%20horário%20no%20Trend%20Hair." target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Agendar pelo WhatsApp">
+    <img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="">
+  </a>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Close mobile menu when clicking on a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Header scroll detection
+    const header = document.getElementById('header');
+    const headerSentinel = document.createElement('div');
+    headerSentinel.style.position = 'absolute';
+    headerSentinel.style.top = '0';
+    headerSentinel.style.height = '1px';
+    headerSentinel.style.width = '1px';
+    document.querySelector('.container').prepend(headerSentinel);
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        const isVisible = entries[0].isIntersecting;
+        header.classList.toggle('scrolled', !isVisible);
+      });
+      observer.observe(headerSentinel);
+    }
+
+    // Testimonials carousel
+    const testimonials = [
+      { text: '"Profissionais excelentes, ambiente acolhedor e ótimos produtos."' },
+      { text: '"Ótimas profissionais, serviço excelente e preços em conta."' },
+      { text: '"Espaço maravilhoso, cafeteria linda e atendimento impecável."' }
+    ];
+
+    let currentTestimonial = 0;
+
+    function updateTestimonials() {
+      const textEl = document.getElementById('testimonialText');
+      const dotsEl = document.getElementById('testimonialDots');
+
+      textEl.textContent = testimonials[currentTestimonial].text;
+
+      // Update dots
+      dotsEl.innerHTML = '';
+      testimonials.forEach((_, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'dot-button' + (i === currentTestimonial ? ' active' : '');
+        btn.innerHTML = '<span class="dot"></span>';
+        btn.addEventListener('click', () => {
+          currentTestimonial = i;
+          updateTestimonials();
+        });
+        dotsEl.appendChild(btn);
+      });
+    }
+
+    updateTestimonials();
+
+    // Auto-rotate testimonials every 6 seconds
+    setInterval(() => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      updateTestimonials();
+    }, 6000);
+
+    // Before/After carousel
+    const baCarousel = document.getElementById('baCarousel');
+    const baPrev = document.getElementById('baPrev');
+    const baNext = document.getElementById('baNext');
+    let baIndex = 0;
+
+    function updateBaCarousel() {
+      baCarousel.style.transform = `translateX(-${baIndex * 100}%)`;
+    }
+
+    baPrev.addEventListener('click', () => {
+      baIndex = (baIndex - 1 + 3) % 3;
+      updateBaCarousel();
+    });
+
+    baNext.addEventListener('click', () => {
+      baIndex = (baIndex + 1) % 3;
+      updateBaCarousel();
+    });
+
+    // FAQ accordion
+    function toggleFaq(button) {
+      const faqItem = button.parentElement;
+      const answer = faqItem.querySelector('.faq-answer');
+      const icon = button.querySelector('.faq-icon');
+
+      answer.classList.toggle('open');
+      icon.style.transform = answer.classList.contains('open') ? 'rotate(45deg)' : 'rotate(0deg)';
+    }
+
+    // Counter animation
+    function animateCounter(id, target, duration = 1200) {
+      const el = document.getElementById(id);
+      const start = performance.now();
+
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(1, elapsed / duration);
+
+        if (id === 'rating-number') {
+          el.textContent = (4.8 * progress).toFixed(1);
+        } else {
+          el.textContent = Math.round(530 * progress);
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    // Start counter animations when page loads
+    window.addEventListener('load', () => {
+      animateCounter('rating-number', 4.8);
+      animateCounter('reviews-count', 530);
+    });
+
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
